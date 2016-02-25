@@ -1,3 +1,8 @@
 from django.contrib import admin
+from drawflix.models import Film, Drawing, Rating, UserProfile
 
-# Register your models here.
+
+admin.site.register(UserProfile)
+admin.site.register(Film)
+admin.site.register(Drawing)
+admin.site.register(Rating)
