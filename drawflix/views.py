@@ -14,3 +14,9 @@ def index(request):
     # Note that the first parameter is the template we wish to use.
 
     return render(request, 'drawflix/index.html', context_dict)
+
+def about(request):
+
+    context_dict = {'boldmessage': "I am bold font from the context"}
+    
+    return render(request, 'drawflix/about.html', context_dict)
