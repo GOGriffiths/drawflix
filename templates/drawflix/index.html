@@ -1,18 +1,24 @@
+
 <!DOCTYPE html>
-
-{% load staticfiles %} <!-- New line -->
-
 <html>
-
     <head>
         <title>drawflix</title>
     </head>
 
     <body>
-        <h1>dickbutt says...</h1>
-        hello world! <strong>{{ boldmessage }}</strong><br />
-        <a href="/drawflix/about/">About</a><br />
-        <img src="{% static "images/dickbutt.jpg" %}" alt="Picture of dickbutt" /> <!-- New line -->
-    </body>
+        <h1>drawflix says...hello world!</h1>
 
+        {% if films %}
+            <ul>
+                {% for film in films %}
+                <li>{{ film.title }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <strong>There are no films present.</strong>
+        {% endif %}
+
+        <a href="/drawflix/about/">About</a><br />
+      
+    </body>
 </html>

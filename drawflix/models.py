@@ -7,9 +7,10 @@ class UserProfile(models.Model):
     # This line is required. Links UserProfile to a User model instance.
     user = models.OneToOneField(User)
 
+
     # The additional attributes we wish to include.
-    website = models.URLField(blank=True)
-    picture = models.ImageField(upload_to='profile_images', blank=True)
+    # website = models.URLField(blank=True)
+    # picture = models.ImageField(upload_to='profile_images', blank=True)
 
     # Override the __unicode__() method to return out something meaningful!
     def __unicode__(self):
@@ -24,21 +25,19 @@ class Film(models.Model):
 class Drawing(models.Model):
     film = models.ForeignKey(Film)
     user = models.ForeignKey(User)
-    title = models.CharField(max_length=128)
+    image = models.URLField()
     views = models.IntegerField(default=0)
     likes = models.IntegerField(default=0)
+    date = models.DateField()
 
     def __unicode__(self):
         return self.title
 
-class Rating(models.Model):
+class Like(models.Model):
     user = models.ForeignKey(User)
     drawing = models.ForeignKey(Drawing)
     # date or just like (how do we implement a like?)
-    date = models.CharField(max_length=128)
-    views = models.IntegerField(default=0)
-    # should the default be 1?
-    likes = models.IntegerField(default=0)
+    date = models.DateField()
 
     def __unicode__(self):
         # not sure about this one
