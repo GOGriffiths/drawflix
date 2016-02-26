@@ -18,7 +18,13 @@ class UserProfile(models.Model):
 
 class Film(models.Model):
     title = models.CharField(max_length=128, unique=True)
+    slug = models.SlugField()
      #will it have a poster too?
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.name)
+        super(Film, self).save(*args, **kwargs)
+
     def __unicode__(self):
         return self.title
 
@@ -28,7 +34,7 @@ class Drawing(models.Model):
     image = models.URLField()
     views = models.IntegerField(default=0)
     likes = models.IntegerField(default=0)
-    date = models.DateField()
+    date = models.DateTimeField()
 
     def __unicode__(self):
         return self.title
