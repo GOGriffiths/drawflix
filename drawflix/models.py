@@ -1,5 +1,7 @@
+import datetime
 from django.db import models
 from django.contrib.auth.models import User
+from django.template.defaultfilters import slugify
 
 # Create your models here.
 
@@ -22,7 +24,7 @@ class Film(models.Model):
      #will it have a poster too?
 
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.name)
+        self.slug = slugify(self.title)
         super(Film, self).save(*args, **kwargs)
 
     def __unicode__(self):
@@ -34,7 +36,7 @@ class Drawing(models.Model):
     image = models.URLField()
     views = models.IntegerField(default=0)
     likes = models.IntegerField(default=0)
-    date = models.DateTimeField()
+    date = models.DateTimeField(default=datetime.datetime.now)
 
     def __unicode__(self):
         return self.title
@@ -43,7 +45,7 @@ class Like(models.Model):
     user = models.ForeignKey(User)
     drawing = models.ForeignKey(Drawing)
     # date or just like (how do we implement a like?)
-    date = models.DateField()
+    date = models.DateTimeField(default=datetime.datetime.now)
 
     def __unicode__(self):
         # not sure about this one

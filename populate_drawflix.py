@@ -9,17 +9,17 @@ from drawflix.models import UserProfile, Film, Drawing, Like
 
 
 def populate():
-    # add_user('Dickbutt')
-    # add_user('Doukie')
+    user1 = add_user('Dickbutt')
+    # user2 = add_user('Doukie')
 
-    add_film('Kill Bill')
-    add_film('Die Hard')
+    film1 = add_film('Kill Bill')
+    # film2 = add_film('Die Hard')
 
-    add_drawing('Kill Bill', 'Dickbutt', 'http://www.imdb.com/title/tt0266697/', 4, 0)
-    add_drawing('Die Hard', 'Doukie', 'http://www.imdb.com/title/tt0095016/?ref_=fn_al_tt_1', 19, 12)
+    add_drawing(film1, user1, 'http://www.imdb.com/title/tt0266697/', 4, 0)
+    # add_drawing('Die Hard', 'Doukie', 'http://www.imdb.com/title/tt0095016/?ref_=fn_al_tt_1', 19, 12)
 
-    add_rating('Dickbutt', 'http://www.imdb.com/title/tt0266697/')
-    add_rating('Doukie', 'http://www.imdb.com/title/tt0095016/?ref_=fn_al_tt_1')
+    # add_rating('Dickbutt', 'http://www.imdb.com/title/tt0266697/')
+    # add_rating('Doukie', 'http://www.imdb.com/title/tt0095016/?ref_=fn_al_tt_1')
 
     # Print out what we have added to the user.
     # for c in .objects.all():
@@ -27,23 +27,21 @@ def populate():
     #         print "- {0} - {1}".format(str(c), str(p))
 
 def add_user(user):
-    u = Like.objects.get_or_create(user=user)[0]
-    username = user
+    u = UserProfile.objects.get_or_create(user=user)[0]
+    u.username = user
     u.save()
     return u
 
-def add_like(user, drawing, date):
+def add_like(user, drawing):
     r = Like.objects.get_or_create(user=user, drawing=drawing)[0]
-    r.date = date
     r.save()
     return r
 
-def add_drawing(film, user, image, views, likes, date):
+def add_drawing(film, user, image, views, likes):
     d = Drawing.objects.get_or_create(film=film, image=image)[0]
     d.user = user
     d.views = views
     d.likes = likes
-    d.date = date
     d.save()
     return d
 
