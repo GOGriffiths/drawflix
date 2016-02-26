@@ -1,24 +1,12 @@
-<!DOCTYPE html>
+{% extends 'base.html' %}
 
-{% load staticfiles %} <!-- New line -->
+{% load staticfiles %}
 
-<html>
+{% block title %} - About{% endblock %}
 
-    <head>
-        <title>drawflix</title>
-    </head>
-
-    <body>
-        <h1>dickbutt says dickbutt...</h1>
-        hello world! <strong>{{ boldmessage }}</strong><br />
-        <a href="/drawflix/">home</a><br />
-        <img src="{% static "images/dickbutt.jpg" %}" alt="Picture of dickbutt" /> <!-- New line -->
-    </body>
-
-    <br />
-    <a href="/drawflix/trending/">Tranding</a><br />
-    <a href="/drawflix/most_recent/">Most Recent</a><br />
-    <a href="/drawflix/hall_of_fame/">Hall of Fame</a><br />
-    <a href="/drawflix/">Home</a><br />
-    <!-- <a href="/drawflix/about/">Search</a><br /> -->
-</html>
+{% block body_block %}
+<h1>dickbutt says dickbutt...</h1>
+hello world! <strong>{{ boldmessage }}</strong><br />
+<a href="/drawflix/">home</a><br />
+<img src="{% static "images/dickbutt.jpg" %}" alt="Picture of dickbutt" /> <!-- New line -->
+{% endblock %}

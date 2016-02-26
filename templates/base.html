@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Drawflix {% block title %}Home{% endblock %}</title>
+    </head>
+
+    <body>
+        <div>
+            {% block body_block %}{% endblock %}
+        </div>
+
+        <hr />
+
+        <div>
+            <ul>
+              <li><a href="/drawflix/">Home</a></li>
+              <li><a href="/drawflix/add_drawing/">Add drawing</a></li>
+              <li><a href="/drawflix/trending/">Trending</a></li>
+              <li><a href="/drawflix/most_recent/">Most Recent</a></li>
+              <li><a href="/drawflix/hall_of_fame/">Hall of Fame</a></li>
+              <li><a href="/drawflix/about/">About</a></li>
+
+            </ul>
+        </div>
+    </body>
+</html>

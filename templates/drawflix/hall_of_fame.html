@@ -1,28 +1,11 @@
+{% extends 'base.html' %}
 
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>drawflix</title>
-    </head>
+{% load staticfiles %}
 
-    <body>
-        <h1>drawflix says...hello world!</h1>
+{% block title %} - Hall of Fame{% endblock %}
 
-        {% if films %}
-            <ul>
-                {% for film in films %}
-                <li>{{ film.title }}</li>
-                {% endfor %}
-            </ul>
-        {% else %}
-            <strong>There are no films present.</strong>
-        {% endif %}
+{% block body_block %}
 
-        <br />
-        <a href="/drawflix/trending/">Tranding</a><br />
-        <a href="/drawflix/most_recent/">Most Recent</a><br />
-        <a href="/drawflix/">Home</a><br />
-        <a href="/drawflix/about/">About</a><br />
-        <!-- <a href="/drawflix/about/">Search</a><br /> -->
-    </body>
-</html>
+<h1>HALL OF FAME GAME BLAME SHAME</h1>
+
+{% endblock %}
