@@ -14,12 +14,12 @@
 
         <div>
             <ul>
-              <li><a href="/drawflix/">Home</a></li>
-              <li><a href="/drawflix/add_drawing/">Add drawing</a></li>
-              <li><a href="/drawflix/trending/">Trending</a></li>
-              <li><a href="/drawflix/most_recent/">Most Recent</a></li>
-              <li><a href="/drawflix/hall_of_fame/">Hall of Fame</a></li>
-              <li><a href="/drawflix/about/">About</a></li>
+              <li><a href="{% url 'index' %}">Home</a></li>
+              <li><a href="{% url 'add_drawing' %}">Add drawing</a></li>
+              <li><a href="{% url 'trending' %}">Trending</a></li>
+              <li><a href="{% url 'most_recent' %}">Most Recent</a></li>
+              <li><a href="{% url 'hall_of_fame' %}">Hall of Fame</a></li>
+              <li><a href="{% url 'about' %}">About</a></li>
 
             </ul>
         </div>
