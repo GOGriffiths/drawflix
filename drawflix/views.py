@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from drawflix.models import Film, Drawing
-from drawflix.forms import DrawingForm
+from drawflix.forms import DrawingForm, FilmSearch
+from drawflix.omdb_search import run_query
 
 import datetime
 from django.utils import timezone
@@ -12,48 +13,38 @@ def index(request):
     # Order the categories by no. likes in descending order.
     # Retrieve the top 5 only - or all if less than 5.
     # Place the list in our context_dict dictionary which will be passed to the template engine.
-    film_list = Film.objects.order_by('-title')[:5]
-    context_dict = {'films': film_list}
 
-    return render(request, 'drawflix/index.html', context_dict)
+    if request.method == 'GET':
+        form = FilmSearch(request.GET)
+        if form.is_valid():
+            cd = form.cleaned_data
+            film_list = run_query(cd["film"])
+            context_dict = {'film': film_list,'form': form}
+            return render(request, 'drawflix/index.html', context_dict)
 
-def add_drawing(request, title_in):
+        else:
+            print form.errors
 
-    try:
-        target_film = Film.objects.get(title=title_in)
-    except Film.DoesNotExist:
-            target_film = None # this tabbing could be an issue
+    return render(request, 'drawflix/index.html', {'form': form})
 
-    if request.method == 'POST':
-        form = DrawingForm(request.POST)
+def film_search(request):
+    if request.method == 'GET':
+        form = FilmSearch(request.GET)
 
         if form.is_valid():
-            if target_film:
-                drawing = form.save(commit=False)
-                drawing.film = target_film
-                drawing.views = 0
-                drawing.likes = 0
-                drawing.save()
-                return (request, title_in)
-
-            # save form to databse
-            # form.save(commit=True)
-
-            # shows user the index page
-            # TODO show user their drawing after sbmission
-            # return index(request)
+            film_list = run_query(film)
 
         else:
             print form.errors
 
     else:
-        form = DrawingForm()
+        form = FilmSearch()
 
-    context_dict = {'form': form, 'film': target_film}
+    context_dict = {'film': film_list}
 
     # TODO do we want to return this?
     # TODO return to page with text "drawing submitted"
-    return render(request, 'drawflix/add_drawing.html', context_dict)
+    return render(request, 'drawflix/index.html', context_dict)
 
 def about(request):
 

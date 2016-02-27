@@ -7,14 +7,27 @@
 {% block body_block %}
 <h1>drawflix says...hello world!</h1>
 
-{% if films %}
-    <ul>
-        {% for film in films %}
-        <li>{{ film.title }}</li>
-        {% endfor %}
-    </ul>
-{% else %}
-    <strong>There are no films present.</strong>
-{% endif %}
+<form id="film_search_form" method="get" action="{% url 'index' %}">
 
+            {% for hidden in form.hidden_fields %}
+                {{ hidden }}
+            {% endfor %}
+
+            {% for field in form.visible_fields %}
+                {{ field.help_text }}
+                {{ field }}
+            {% endfor %}
+
+            <input type="submit" name="submit"/> </br>
+	
+	
+	{% if film %}
+	</br>
+	<select>
+	{% for f in film %}
+	<option> {{ f.title }}</option>	
+	{% endfor %}
+	</select>
+	{% endif %}
+			
 {% endblock %}
