@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from drawflix.models import Film, Drawing
-from drawflix.forms import DrawingForm, FilmSearch
-from drawflix.omdb_search import run_query
+from drawflix.forms import DrawingForm
 
 import datetime
 from django.utils import timezone
@@ -9,47 +8,10 @@ from django.utils import timezone
 from django.http import HttpResponse
 
 def index(request):
-    # Query the database for a list of ALL categories currently stored.
-    # Order the categories by no. likes in descending order.
-    # Retrieve the top 5 only - or all if less than 5.
-    # Place the list in our context_dict dictionary which will be passed to the template engine.
-
-    if request.method == 'GET':
-        form = FilmSearch(request.GET)
-        if form.is_valid():
-            cd = form.cleaned_data
-            film_list = run_query(cd["film"])
-            context_dict = {'film': film_list,'form': form}
-            return render(request, 'drawflix/index.html', context_dict)
-
-        else:
-            print form.errors
-
-    return render(request, 'drawflix/index.html', {'form': form})
-
-def film_search(request):
-    if request.method == 'GET':
-        form = FilmSearch(request.GET)
-
-        if form.is_valid():
-            film_list = run_query(film)
-
-        else:
-            print form.errors
-
-    else:
-        form = FilmSearch()
-
-    context_dict = {'film': film_list}
-
-    # TODO do we want to return this?
-    # TODO return to page with text "drawing submitted"
-    return render(request, 'drawflix/index.html', context_dict)
+    return render(request, 'drawflix/index.html')
 
 def about(request):
-
     context_dict = {'boldmessage': "I am bold font from the context"}
-
     return render(request, 'drawflix/about.html', context_dict)
 
 def most_recent(request):

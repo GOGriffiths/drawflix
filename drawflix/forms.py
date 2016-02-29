@@ -29,20 +29,3 @@ class DrawingForm(forms.ModelForm):
         # views = models.IntegerField(default=0)
         # likes = models.IntegerField(default=0)
         # date = models.DateTimeField(default=datetime.datetime.now)
-
-class FilmSearch(forms.Form):
-    film = forms.CharField(max_length=128, help_text="Please enter the title of the film.")
-    fields = ('film',)
-
-
-# class UserForm(forms.ModelForm):
-#     password = forms.CharField(widget=forms.PasswordInput())
-#
-#     class Meta:
-#         model = User
-#         fields = ('username', 'email', 'password')
-#
-# class UserProfileForm(forms.ModelForm):
-#     class Meta:
-#         model = UserProfile
-#         fields = ('website', 'picture')
