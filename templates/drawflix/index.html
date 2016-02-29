@@ -7,18 +7,11 @@
 {% block body_block %}
 <h1>drawflix says...hello world!</h1>
 
-<form id="film_search_form" method="get" action="{% url 'index' %}">
-
-            {% for hidden in form.hidden_fields %}
-                {{ hidden }}
-            {% endfor %}
-
-            {% for field in form.visible_fields %}
-                {{ field.help_text }}
-                {{ field }}
-            {% endfor %}
-
-            <input type="submit" name="submit"/> </br>
+<form method="get" action="#" enctype="text/html">
+<input type="text" id="film_search" maxlength="50" />       
+<input type="submit" id="submit_search"/> </br>
+</br>
+<select id="options" hidden></select>
 	
 	
 	{% if film %}

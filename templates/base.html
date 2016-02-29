@@ -3,6 +3,9 @@
 <html>
     <head>
         <title>Drawflix {% block title %}Home{% endblock %}</title>
+		{% load staticfiles %}
+		<script src="{% static "js/jquery-2.2.1.js" %}"></script>
+		<script src="{% static "js/drawflix-ajax.js" %}"></script>
     </head>
 
     <body>
