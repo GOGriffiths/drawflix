@@ -2,19 +2,19 @@
 
 {% load staticfiles %}
 
-{% block title %} - Draw{% endblock %}
+{% block title %} - Register{% endblock %}
 
 {% block body_block %}
 
-<h1>Register with Rango</h1>
+<h1>Register with drawflix</h1>
 
        {% if registered %}
-       Rango says: <strong>thank you for registering!</strong>
-       <a href="/rango/">Return to the homepage.</a><br />
+       drawflix says: <strong>thank you for registering!</strong>
+       <a href="/drawflix/">Return to the homepage.</a><br />
        {% else %}
-       Rango says: <strong>register here!</strong><br />
+       drawflix says: <strong>register here!</strong><br />
 
-       <form id="user_form" method="post" action="/rango/register/"
+       <form id="user_form" method="post" action="/drawflix/register/"
                enctype="multipart/form-data">
 
            {% csrf_token %}
