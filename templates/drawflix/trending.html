@@ -1,11 +1,16 @@
 {% extends 'base.html' %}
 
 {% load staticfiles %}
+{% load drawflix_extras %}
 
 {% block title %} - Trending{% endblock %}
 
 {% block body_block %}
 
 <h1>MIND-BENDING BLENDING WENDING TRENDING EXTRAVAGANT SPENDING</h1>
+
+<div>
+{% get_drawing_list %}
+</div>
 
 {% endblock %}

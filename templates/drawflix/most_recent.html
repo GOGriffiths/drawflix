@@ -1,11 +1,16 @@
 {% extends 'base.html' %}
 
 {% load staticfiles %}
+{% load drawflix_extras %}
 
 {% block title %} - Most Recent{% endblock %}
 
 {% block body_block %}
 
 <h1>MOST RECENT - DECENT</h1>
+
+<div>
+{% get_drawing_list %}
+</div>
 
 {% endblock %}

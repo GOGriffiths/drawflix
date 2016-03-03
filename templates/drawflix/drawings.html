@@ -1,0 +1,11 @@
+{% if drawings %}
+    <ul class="nav nav-sidebar">
+    {% for d in drawings %}
+        <li><a href="{% url 'drawing'  d.slug %}">{{ d.name }}</a></li>
+    {% endfor %}
+
+{% else %}
+    <li> <strong >There are no drawings present.</strong></li>
+
+    </ul>
+{% endif %}
