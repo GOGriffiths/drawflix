@@ -9,3 +9,5 @@ admin.site.register(UserProfile)
 admin.site.register(Film, FilmAdmin)
 admin.site.register(Drawing)
 admin.site.register(Like)
+
+# put this in one line

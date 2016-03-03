@@ -7,19 +7,11 @@
 {% block body_block %}
 <h1>drawflix says...hello world!</h1>
 
-<input type="text" id="film_search" maxlength="50" />       
+<input type="text" id="film_search" maxlength="50" />
 <input type="submit" id="submit_search"/> </br>
 </br>
 <select id="options" hidden></select>
-	
-	
-	{% if film %}
-	</br>
-	<select>
-	{% for f in film %}
-	<option> {{ f.title }}</option>	
-	{% endfor %}
-	</select>
-	{% endif %}
-			
+
+<!-- call the js drawing app here? -->
+
 {% endblock %}
