@@ -31,15 +31,19 @@ class Film(models.Model):
         return self.title
 
 class Drawing(models.Model):
-    film = models.ForeignKey(Film)
-    user = models.ForeignKey(User)
-    image = models.URLField()
+
+    # film = models.ForeignKey(Film)
+    # user = models.ForeignKey(User)
+
+    # image = models.URLField()
+    #!!!!!  replace this with the image url link
+    image = models.CharField(max_length=128, unique=True)
     views = models.IntegerField(default=0)
     likes = models.IntegerField(default=0)
     date = models.DateTimeField(default=datetime.datetime.now)
 
     def __unicode__(self):
-        return self.title
+        return self.image
 
 class Like(models.Model):
     user = models.ForeignKey(User)

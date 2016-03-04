@@ -20,4 +20,32 @@
       <select id="options" hidden></select>
     </div>
 
+    <!-- temp solution -->
+    <form id="drawing_form" method="post" action="/drawflix/">
+
+         {% csrf_token %}
+         {% for hidden in form.hidden_fields %}
+             {{ hidden }}
+         {% endfor %}
+
+         {% for field in form.visible_fields %}
+             {{ field.errors }}
+             {{ field.help_text }}
+             {{ field }}
+         {% endfor %}
+
+         <input type="submit" name="submit" value="Create drawing" />
+     </form>
+
+<!--remvoe this lster!!!!!  -->
+     {% if drawings %}
+         <ul>
+           {% for drawing in drawings %}
+               <li>{{drawing.image }}</li>
+           {% endfor %}
+         </ul>
+   {% else %}
+         <strong>There are no drawings present.</strong>
+   {% endif %}
+
   {% endblock %}

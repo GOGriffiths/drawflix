@@ -1,5 +1,7 @@
 $(document).ready( function() {
 
+	// for drawing page ---------
+
 	//when submit_search button clicked
 	$('#submit_search').click(function(event){
 		var searchFilm = $("#film_search").val(); //value to search for is value in searchFilm box
@@ -16,6 +18,20 @@ $(document).ready( function() {
 	//clear the search box for next input
 	$("#film_search").val('');
 });
+
+
+	//for likes ----------
+
+	$('#likes').click(function(){
+    var catid;
+    catid = $(this).attr("data-catid");
+    $.get('/drawflix/like_drawing/', {drawing_id: catid}, function(data){
+               $('#like_count').html(data);
+               $('#likes').hide();
+    });
+	});
+
+
 
 
 });

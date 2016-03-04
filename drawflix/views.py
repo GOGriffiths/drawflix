@@ -1,11 +1,13 @@
 from django.shortcuts import render
 from drawflix.models import Film, Drawing
-from drawflix.forms import DrawingForm, UserForm, UserProfileForm
+from drawflix.forms import DrawingForm
+# , UserForm, UserProfileForm
 # from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
+
 from django.http import HttpResponseRedirect, HttpResponse
 from datetime import datetime
 from django.utils import timezone
-# from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -35,7 +37,29 @@ def index(request):
         request.session['visits'] = visits
     context_dict['visits'] = visits
 
+    #temp solution for drawing(trext) in index.
+    if request.method == 'POST':
+        form = DrawingForm(request.POST)
 
+        # Have we been provided with a valid form?
+        if form.is_valid():
+            # Save the new category to the database.
+            form.save(commit=True)
+
+            # Now call the index() view.
+            # The user will be shown the homepage.
+            return index(request)
+        else:
+            # The supplied form contained errors - just print them to the terminal.
+            print form.errors
+    else:
+        # If the request was not a POST, display the form to enter details.
+        form = DrawingForm()
+
+
+    context_dict['form'] = form
+    drawing_list = Drawing.objects.order_by('image')[:5]
+    context_dict['drawings'] = drawing_list
     response = render(request,'drawflix/index.html', context_dict)
 
     return response
@@ -60,3 +84,21 @@ def hall_of_fame(request):
     recent_drawings = Drawing.objects.order_by('-date')[:15]
     context_dict = {'recent_drawings': recent_drawings}
     return render(request, 'drawflix/hall_of_fame.html', context_dict)
+
+
+@login_required
+def like_drawing(request):
+
+    drawing_id = None
+    if request.method == 'GET':
+        drawing_id = request.GET['drawing_id']
+
+    likes = 0
+    if drawing_id:
+        drawing = Drawing.objects.get(id=int(drawing_id))
+        if drawing:
+            likes = drawing.likes + 1
+            drawing.likes =  likes
+            drawing.save()
+
+    return HttpResponse(likes)

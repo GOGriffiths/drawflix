@@ -1,7 +1,23 @@
 {% if drawings %}
     <ul class="nav nav-sidebar">
+
     {% for d in drawings %}
-        <li><a href="{% url 'drawing'  d.slug %}">{{ d.name }}</a></li>
+        <li>{{ d.image }}  </li>
+
+        <li>
+        <strong id="like_count">{{ d.likes }}</strong> likes
+
+      <!-- {% if user.is_authenticated %} -->
+          <button id="likes" data-catid="{{d.id}}" class="btn btn-primary" type="button">
+          <span class="glyphicon glyphicon-thumbs-up"></span>
+          Like
+        </button>
+      </li>
+
+      <!-- {% endif %} -->
+
+
+
     {% endfor %}
 
 {% else %}
