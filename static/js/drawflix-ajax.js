@@ -20,17 +20,16 @@ $(document).ready( function() {
 });
 
 
+
 	//for likes ----------
-
-	$('#likes').click(function(){
-    var catid;
-    catid = $(this).attr("data-catid");
-    $.get('/drawflix/like_drawing/', {drawing_id: catid}, function(data){
-               $('#like_count').html(data);
-               $('#likes').hide();
+	$(document).on("click","#like", function(){
+		var catid;
+		catid = $(this).attr("data-catid");
+		$.get('/drawflix/like_drawing/', {drawing_id: catid}, function(data){
+							 location.reload();
     });
-	});
 
+	});
 
 
 

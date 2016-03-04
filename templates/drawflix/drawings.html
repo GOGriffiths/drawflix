@@ -5,14 +5,19 @@
         <li>{{ d.image }}  </li>
 
         <li>
-        <strong id="like_count">{{ d.likes }}</strong> likes
+        <strong class="like_count">{{ d.likes }}</strong> likes
+
+
+        <button id="like" data-catid="{{d.id}}" class="btn btn-primary" type="button">
+          <span class="glyphicon glyphicon-thumbs-up"></span>
+          Like</button>
 
       <!-- {% if user.is_authenticated %} -->
-          <button id="likes" data-catid="{{d.id}}" class="btn btn-primary" type="button">
+          <!-- <button class="likes" data-catid="{{d.id}}" class="btn btn-primary" type="button">
           <span class="glyphicon glyphicon-thumbs-up"></span>
           Like
         </button>
-      </li>
+      </li> -->
 
       <!-- {% endif %} -->
 
