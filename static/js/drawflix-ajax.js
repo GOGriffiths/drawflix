@@ -19,6 +19,10 @@ $(document).ready( function() {
 	$("#film_search").val('');
 });
 
+$("#options").on("change", function() {
+      $("#id_film").val($(this).val());
+    });
+
 
 
 	//for likes ----------
