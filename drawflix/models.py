@@ -18,21 +18,21 @@ class UserProfile(models.Model):
     def __unicode__(self):
         return self.user.username
 
-class Film(models.Model):
-    title = models.CharField(max_length=128, unique=True)
-    slug = models.SlugField()
-     #will it have a poster too?
-
-    def save(self, *args, **kwargs):
-        self.slug = slugify(self.title)
-        super(Film, self).save(*args, **kwargs)
-
-    def __unicode__(self):
-        return self.title
+# class Film(models.Model):
+#     title = models.CharField(max_length=128, unique=True)
+#     slug = models.SlugField()
+#      #will it have a poster too?
+#
+#     def save(self, *args, **kwargs):
+#         self.slug = slugify(self.title)
+#         super(Film, self).save(*args, **kwargs)
+#
+#     def __unicode__(self):
+#         return self.title
 
 class Drawing(models.Model):
 
-    # film = models.ForeignKey(Film)
+    film = models.CharField(max_length=200)
     # user = models.ForeignKey(User)
 
     # image = models.URLField()

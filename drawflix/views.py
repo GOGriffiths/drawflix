@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from drawflix.models import Film, Drawing
+from drawflix.models import Drawing
 from drawflix.forms import DrawingForm
 # , UserForm, UserProfileForm
 # from django.contrib.auth import authenticate, login, logout
