@@ -37,7 +37,7 @@ class Drawing(models.Model):
 
     # image = models.URLField()
     #!!!!!  replace this with the image url link
-    image = models.CharField(max_length=128, unique=True)
+    image = models.CharField(max_length=65536,unique=True)
     views = models.IntegerField(default=0)
     likes = models.IntegerField(default=0)
     date = models.DateTimeField(default=datetime.datetime.now)

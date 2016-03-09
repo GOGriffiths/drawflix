@@ -8,7 +8,7 @@ class DrawingForm(forms.ModelForm):
 
 
     film = forms.CharField(max_length=200)
-    image = forms.CharField(max_length=128)
+    image = forms.CharField()
     views = forms.IntegerField(widget=forms.HiddenInput(), initial=0)
     likes = forms.IntegerField(widget=forms.HiddenInput(), initial=0)
 

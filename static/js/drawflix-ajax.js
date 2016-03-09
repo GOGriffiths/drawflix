@@ -1,3 +1,5 @@
+
+
 $(document).ready( function() {
 
 	// for drawing page ---------
@@ -35,6 +37,15 @@ $("#options").on("change", function() {
 
 	});
 
+	var myBoard = new DrawingBoard.Board('test_board');
 
+	$("#Test").click(function() {
+		
+		var canvas = myBoard.getImg();
+		console.log(canvas);
+
+
+
+});
 
 });
