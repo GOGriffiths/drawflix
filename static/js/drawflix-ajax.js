@@ -42,7 +42,7 @@ $("#options").on("change", function() {
 	$("#Test").click(function() {
 		
 		var canvas = myBoard.getImg();
-		console.log(canvas);
+		$("#id_image").val(canvas);
 
 
 
