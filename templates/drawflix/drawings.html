@@ -2,7 +2,7 @@
     <ul class="nav nav-sidebar">
 
     {% for d in drawings %}
-        <li>{{ d.image }}  </li>
+        <img src="{{ d.image }}"></img>
 
         <li>
         <strong class="like_count">{{ d.likes }}</strong> likes
@@ -11,6 +11,7 @@
         <button id="like" data-catid="{{d.id}}" class="btn btn-primary" type="button">
           <span class="glyphicon glyphicon-thumbs-up"></span>
           Like</button>
+		  </br>
 
       <!-- {% if user.is_authenticated %} -->
           <!-- <button class="likes" data-catid="{{d.id}}" class="btn btn-primary" type="button">
