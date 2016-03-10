@@ -76,7 +76,8 @@ def add_drawing(request):
         if form.is_valid():
             # Save the new category to the database.
             drawing = form.save(commit=False)
-            drawing.user = request.user
+            if request.user.is_authenticated():
+                drawing.user = request.user
             drawing.save()
 
         else:
