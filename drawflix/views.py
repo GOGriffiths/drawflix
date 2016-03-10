@@ -6,7 +6,7 @@ from drawflix.forms import DrawingForm
 from django.contrib.auth.decorators import login_required
 
 from django.http import HttpResponseRedirect, HttpResponse
-from datetime import datetime
+from datetime import datetime, timedelta
 from django.utils import timezone
 
 # Create your views here.
@@ -55,10 +55,10 @@ def most_recent(request):
     return render(request, 'drawflix/most_recent.html', context_dict)
 
 def trending(request):
-    # end_date = datetime.date.today()
-    # start_date = end_date - datetime.timedelta(days = 7)
-    # trending_drawings = Drawing.objects.filter(date__range=[start_date, end_date]).order_by('-likes')[:25]
-    # context_dict = {'trending_drawings': trending_drawings}
+    end_date = datetime.now()
+    start_date = end_date - timedelta(days = 7)
+    trending_drawings = Drawing.objects.filter(date__range=[start_date, end_date]).order_by('-likes')[:25]
+    context_dict = {'trending_drawings': trending_drawings}
     return render(request, 'drawflix/trending.html')
 
 def hall_of_fame(request):

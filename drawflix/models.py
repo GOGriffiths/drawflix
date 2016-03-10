@@ -33,7 +33,8 @@ class UserProfile(models.Model):
 class Drawing(models.Model):
 
     film = models.CharField(max_length=200)
-    user = models.ForeignKey(User)
+    # Maybe add a default anonymous user??
+    user = models.ForeignKey(User, null=True)
 
     # image = models.URLField()
     #!!!!!  replace this with the image url link
