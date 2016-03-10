@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 
 {% load staticfiles %}
-{% load drawflix_extras %}
 
 {% block title %} - Most Recent{% endblock %}
 
@@ -9,8 +8,40 @@
 
 <h1>MOST RECENT - DECENT</h1>
 
-<div>
-{% get_drawing_list %}
-</div>
+{% if drawings %}
+    <ul class="nav nav-sidebar">
+
+    {% for d in drawings %}
+        <img src="{{ d.image }}"></img>
+
+        <li>
+        <strong class="like_count">{{ d.likes }}</strong> likes
+
+		<p>Drawing created by user {{d.user}}</p>
+
+        <button id="like" data-catid="{{d.id}}" class="btn btn-primary" type="button">
+          <span class="glyphicon glyphicon-thumbs-up"></span>
+          Like</button>
+		  </br>
+
+      <!-- {% if user.is_authenticated %} -->
+          <!-- <button class="likes" data-catid="{{d.id}}" class="btn btn-primary" type="button">
+          <span class="glyphicon glyphicon-thumbs-up"></span>
+          Like
+        </button>
+      </li> -->
+
+      <!-- {% endif %} -->
+
+
+
+    {% endfor %}
+
+{% else %}
+    <li> <strong >There are no drawings present.</strong></li>
+
+    </ul>
+{% endif %}
+
 
 {% endblock %}

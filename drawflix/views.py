@@ -59,7 +59,7 @@ def trending(request):
     start_date = end_date - timedelta(days = 7)
     trending_drawings = Drawing.objects.filter(date__range=[start_date, end_date]).order_by('-likes')[:25]
     context_dict = {'trending_drawings': trending_drawings}
-    return render(request, 'drawflix/trending.html')
+    return render(request, 'drawflix/trending.html', context_dict)
 
 def hall_of_fame(request):
     recent_drawings = Drawing.objects.order_by('-date')[:15]
