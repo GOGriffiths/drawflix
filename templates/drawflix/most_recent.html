@@ -8,10 +8,10 @@
 
 <h1>MOST RECENT - DECENT</h1>
 
-{% if drawings %}
+{% if recent_drawings %}
     <ul class="nav nav-sidebar">
 
-    {% for d in drawings %}
+    {% for d in recent_drawings %}
         <img src="{{ d.image }}"></img>
 
         <li>
