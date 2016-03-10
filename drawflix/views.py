@@ -37,26 +37,7 @@ def index(request):
         request.session['visits'] = visits
     context_dict['visits'] = visits
 
-    #temp solution for drawing(trext) in index.
-    if request.method == 'POST':
-        form = DrawingForm(request.POST)
-
-        # Have we been provided with a valid form?
-        if form.is_valid():
-            # Save the new category to the database.
-            form.save(commit=True)
-
-            # Now call the index() view.
-            # The user will be shown the homepage.
-            return index(request)
-        else:
-            # The supplied form contained errors - just print them to the terminal.
-            print form.errors
-    else:
-        # If the request was not a POST, display the form to enter details.
-        form = DrawingForm()
-
-
+    form = DrawingForm()
     context_dict['form'] = form
     drawing_list = Drawing.objects.order_by('image')[:5]
     context_dict['drawings'] = drawing_list
@@ -85,6 +66,22 @@ def hall_of_fame(request):
     context_dict = {'recent_drawings': recent_drawings}
     return render(request, 'drawflix/hall_of_fame.html', context_dict)
 
+
+def add_drawing(request):
+    #temp solution for drawing(trext) in index.
+    if request.method == 'POST':
+        form = DrawingForm(request.POST)
+
+        # Have we been provided with a valid form?
+        if form.is_valid():
+            # Save the new category to the database.
+            form.save(commit=True)
+
+        else:
+            # The supplied form contained errors - just print them to the terminal.
+            print form.errors
+
+    return index(request)
 
 @login_required
 def like_drawing(request):
