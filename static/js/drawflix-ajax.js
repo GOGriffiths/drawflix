@@ -37,7 +37,17 @@ $("#options").on("change", function() {
 
 	});
 
-	var myBoard = new DrawingBoard.Board('test_board');
+	var myBoard = new DrawingBoard.Board('test_board',{
+	controls: [
+		'Color',
+		{ Size: { type: 'dropdown' } },
+		{ DrawingMode: { filler: false } },
+		'Navigation',
+	],
+	size: 1,
+	webStorage: 'session',
+	enlargeYourContainer: true
+});
 
 	$("#Test").click(function() {
 		
