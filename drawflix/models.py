@@ -33,7 +33,7 @@ class UserProfile(models.Model):
 class Drawing(models.Model):
 
     film = models.CharField(max_length=200)
-    # user = models.ForeignKey(User)
+    user = models.ForeignKey(User)
 
     # image = models.URLField()
     #!!!!!  replace this with the image url link

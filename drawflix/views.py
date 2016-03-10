@@ -75,7 +75,9 @@ def add_drawing(request):
         # Have we been provided with a valid form?
         if form.is_valid():
             # Save the new category to the database.
-            form.save(commit=True)
+            drawing = form.save(commit=False)
+            drawing.user = request.user
+            drawing.save()
 
         else:
             # The supplied form contained errors - just print them to the terminal.
