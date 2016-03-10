@@ -17,7 +17,11 @@
         <li>
         <strong class="like_count">{{ d.likes }}</strong> likes
 
-		<p>Drawing created by user {{d.user}}</p>
+        {% if d.user != None %}
+      <p>Drawing created by user {{d.user}}</p>
+      {% else %}
+      <p>Submitted by some anonymous guy</p>
+      {% endif %}
 
         <button id="like" data-catid="{{d.id}}" class="btn btn-primary" type="button">
           <span class="glyphicon glyphicon-thumbs-up"></span>
