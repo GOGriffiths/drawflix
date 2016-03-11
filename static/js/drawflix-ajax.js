@@ -67,4 +67,6 @@ $("#options").on("change", function() {
 
 });
 
+$("#fade_in").fadeIn(1500);
+
 });

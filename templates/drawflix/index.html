@@ -26,61 +26,48 @@
 
 </style>
 
-{% if user.is_authenticated %}
-    <div class="page-header">
+      <div class="page-header">
+    {% if user.is_authenticated %}
 
-                <h1>drawflix says... hello {{ user.username }}!</h1>
-            {% else %}
-                <h1>drawflix says... hello world!</h1>
-    
-    </div>
-	        {% endif %}
+
+      <h1>drawflix says... hello {{ user.username }}!</h1>{% else %}
+
+      <h1>drawflix says... hello world!</h1>
+
+
+      {% endif %}
+      </div>
+
     <div>
-      <input type="text" id="film_search" maxlength="50" />
-      <input type="submit" id="submit_search"/> </br>
-      </br>
-      <select id="options" hidden></select>
+      <input type="text" id="film_search" maxlength="50" /> <input type="submit" id=
+      "submit_search" /><br />
+      <br />
+      <select id="options" hidden="">
+        </select>
+    </div><!-- temp solution -->
+
+    <form id="drawing_form" method="post" action="/drawflix/add_drawing/" hidden="" name=
+    "drawing_form">
+      {% csrf_token %} {% for hidden in form.hidden_fields %} {{ hidden }} {% endfor %}
+      {% for field in form.visible_fields %} {{ field.errors }} {{ field.help_text }} {{
+      field }} {% endfor %} <input type="submit" id="confirm_drawing" name="submit"
+      value="Create drawing" />
+    </form><!--remvoe this lster!!!!!  -->
+    {% if drawings %}
+
+    <ul>
+      <li style="list-style: none">{% for drawing in drawings %}</li>
+
+      <li>{{drawing.film }}</li>
+
+      <li style="list-style: none">{% endfor %}</li>
+    </ul>{% else %} <strong>There are no drawings present.</strong> {% endif %}
+
+    <div>
+      <h1>DRAW SOME FLIX!</h1>
+    </div><button id="finalise">Confirm Drawing</button>
+
+    <div class="drawing_board" board="1">
+      <div class="board" id="test_board"></div>
     </div>
-
-    <!-- temp solution -->
-    <form id="drawing_form" method="post" action="/drawflix/add_drawing/" hidden>
-
-         {% csrf_token %}
-         {% for hidden in form.hidden_fields %}
-             {{ hidden }}
-         {% endfor %}
-
-         {% for field in form.visible_fields %}
-             {{ field.errors }}
-             {{ field.help_text }}
-             {{ field }}
-         {% endfor %}
-
-         <input type="submit" id="confirm_drawing" name="submit" value="Create drawing" />
-     </form>
-
-<!--remvoe this lster!!!!!  -->
-     {% if drawings %}
-         <ul>
-           {% for drawing in drawings %}
-               <li>{{drawing.film }}</li>
-           {% endfor %}
-         </ul>
-   {% else %}
-         <strong>There are no drawings present.</strong>
-   {% endif %}
-
-   <div>
-     <h1>DRAW SOME FLIX!</h1>
-   </div>
-
-   <button id="finalise">Confirm Drawing</button>
-
-   <div class="drawing_board" board = "1">
-     <div class="board" id="test_board"></div>
-   </div>
-
-
-
-
   {% endblock %}
