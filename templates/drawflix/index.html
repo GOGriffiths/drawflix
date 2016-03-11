@@ -43,7 +43,7 @@
     </div>
 
     <!-- temp solution -->
-    <form id="drawing_form" method="post" action="/drawflix/add_drawing/">
+    <form id="drawing_form" method="post" action="/drawflix/add_drawing/" hidden>
 
          {% csrf_token %}
          {% for hidden in form.hidden_fields %}
@@ -56,7 +56,7 @@
              {{ field }}
          {% endfor %}
 
-         <input type="submit" name="submit" value="Create drawing" />
+         <input type="submit" id="confirm_drawing" name="submit" value="Create drawing" />
      </form>
 
 <!--remvoe this lster!!!!!  -->
@@ -74,7 +74,7 @@
      <h1>DRAW SOME FLIX!</h1>
    </div>
 
-   <button id="Test">Test Button</button>
+   <button id="finalise">Confirm Drawing</button>
 
    <div class="drawing_board" board = "1">
      <div class="board" id="test_board"></div>

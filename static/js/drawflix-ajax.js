@@ -28,8 +28,6 @@ $(document).ready( function() {
 	});
 
 
-
-
 $("#options").on("change", function() {
       $("#id_film").val($(this).val());
     });
@@ -58,11 +56,12 @@ $("#options").on("change", function() {
 	enlargeYourContainer: true
 });
 
-	$("#Test").click(function() {
+	$("#finalise").click(function() {
 
 		var canvas = myBoard.getImg();
 
 		$("#id_image").val(canvas);
+		$('#confirm_drawing').click()
 
 
 
