@@ -83,7 +83,7 @@ def add_drawing(request):
         else:
             # The supplied form contained errors - just print them to the terminal.
             print form.errors
-
+    #TODO return drawing submitted message to user
     return index(request)
 
 @login_required
