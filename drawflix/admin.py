@@ -1,12 +1,11 @@
 from django.contrib import admin
-from drawflix.models import Drawing, Like
+
+from drawflix.models import Drawing
 
 
-class FilmAdmin(admin.ModelAdmin):
-    prepopulated_fields = {'slug': ('title',)}
+class DrawingAdmin(admin.ModelAdmin):
+
+    list_display = ('film', 'user', 'likes', 'date')
 
 
-admin.site.register(Drawing)
-admin.site.register(Like)
-
-# put this in one line
+admin.site.register(Drawing, DrawingAdmin)
