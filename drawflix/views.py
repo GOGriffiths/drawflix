@@ -98,7 +98,7 @@ def like_drawing(request):
         drawing = Drawing.objects.get(id=int(drawing_id))
         if drawing:
             likes = drawing.likes + 1
-            drawing.likes =  likes
+            drawing.likes = likes
             drawing.save()
 
     return HttpResponse(likes)

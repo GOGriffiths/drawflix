@@ -12,7 +12,14 @@
     <ul class="nav nav-sidebar">
 
     {% for d in recent_drawings %}
-        <img src="{{ d.image }}"></img>
+        <img src="{{ d.image }}">
+      </img>
+  </br>
+      <button id="like" data-catid="{{d.id}}" class="btn btn-primary" type="button">
+        <span class="glyphicon glyphicon-thumbs-up"></span>
+        Like</button>
+        </br>
+
 
         <li>
         <strong class="like_count">{{ d.likes }}</strong> likes
@@ -23,11 +30,6 @@
       {% else %}
       <p>Submitted by some anonymous guy</p>
       {% endif %}
-
-        <button id="like" data-catid="{{d.id}}" class="btn btn-primary" type="button">
-          <span class="glyphicon glyphicon-thumbs-up"></span>
-          Like</button>
-		  </br>
 
       <!-- {% if user.is_authenticated %} -->
           <!-- <button class="likes" data-catid="{{d.id}}" class="btn btn-primary" type="button">
