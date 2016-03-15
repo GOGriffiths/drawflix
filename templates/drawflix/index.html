@@ -46,12 +46,17 @@
         </select>
     </div><!-- temp solution -->
 
-    <form id="drawing_form" method="post" action="/drawflix/add_drawing/" hidden="" name=
-    "drawing_form">
-      {% csrf_token %} {% for hidden in form.hidden_fields %} {{ hidden }} {% endfor %}
-      {% for field in form.visible_fields %} {{ field.errors }} {{ field.help_text }} {{
-      field }} {% endfor %} <input type="submit" id="confirm_drawing" name="submit"
-      value="Create drawing" />
+    <form id="drawing_form" method="post" action="/drawflix/add_drawing/" hidden="" name="drawing_form">
+      {% csrf_token %}
+      {% for hidden in form.hidden_fields %}
+      {{ hidden }}
+      {% endfor %}
+      {% for field in form.visible_fields %}
+      {{ field.errors }}
+      {{ field.help_text }}
+      {{ field }}
+      {% endfor %}
+      <input type="submit" id="confirm_drawing" name="submit" value="Create drawing" />
     </form><!--remvoe this lster!!!!!  -->
     {% if drawings %}
 
