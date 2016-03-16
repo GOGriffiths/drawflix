@@ -48,7 +48,7 @@ $("#options").on("change", function() {
 	controls: [
 		'Color',
 		{ Size: { type: 'dropdown' } },
-		{ DrawingMode: { filler: false } },
+		{ DrawingMode: { filler: true } },
 		'Navigation',
 	],
 	size: 1,
