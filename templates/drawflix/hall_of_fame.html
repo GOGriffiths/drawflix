@@ -22,7 +22,8 @@
 
 
         <li>
-        <strong class="like_count">{{ d.likes }}</strong> likes
+          <strong class="like_count" id="{{d.id}}">{{ d.likes }}</strong> likes
+
 		<p>Drawing of film {{d.film}}</p>
 
         {% if d.user != None %}
