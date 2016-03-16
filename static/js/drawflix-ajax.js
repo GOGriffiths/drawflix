@@ -39,7 +39,8 @@ $("#options").on("change", function() {
 		var catid;
 		catid = $(this).attr("data-catid");
 		$.get('/drawflix/like_drawing/', {drawing_id: catid}, function(data){
-							 location.reload();
+			$('#' + catid).html(data);
+
     });
 
 	});
