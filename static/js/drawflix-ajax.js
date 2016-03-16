@@ -52,7 +52,7 @@ $("#options").on("change", function() {
 		'Navigation',
 	],
 	size: 1,
-	webStorage: 'session',
+	webStorage: 'local',
 	enlargeYourContainer: true
 });
 
@@ -62,7 +62,7 @@ $("#options").on("change", function() {
 
 		$("#id_image").val(canvas);
 		$('#confirm_drawing').click()
-
+		$('.drawing-board-control-navigation-reset').click();
 
 
 });
