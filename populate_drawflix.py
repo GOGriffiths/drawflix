@@ -5,39 +5,21 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'drawflix_project.settings')
 import django
 django.setup()
 
-from drawflix.models import UserProfile, Film, Drawing, Like
+from drawflix.models import Drawing
+from django.contrib.auth.models import User
 
 
 def populate():
-    user1 = add_user('Dickbutt')
-    # user2 = add_user('Doukie')
+    # user1 = add_user('Dickbutt')
+    # # user2 = add_user('Doukie')
 
-    film1 = add_film('Kill Bill')
-    # film2 = add_film('Die Hard')
+    add_drawing(user=user1,
+                film=Shrek,
+                image=shrek,
+                views = 99,
+                likes= 0)
 
-    add_drawing(film1, user1, 'http://www.imdb.com/title/tt0266697/', 4, 0)
-    # add_drawing('Die Hard', 'Doukie', 'http://www.imdb.com/title/tt0095016/?ref_=fn_al_tt_1', 19, 12)
-
-    # add_rating('Dickbutt', 'http://www.imdb.com/title/tt0266697/')
-    # add_rating('Doukie', 'http://www.imdb.com/title/tt0095016/?ref_=fn_al_tt_1')
-
-    # Print out what we have added to the user.
-    # for c in .objects.all():
-    #     for p in Page.objects.filter(category=c):
-    #         print "- {0} - {1}".format(str(c), str(p))
-
-def add_user(user):
-    u = UserProfile.objects.get_or_create(user=user)[0]
-    u.username = user
-    u.save()
-    return u
-
-def add_like(user, drawing):
-    r = Like.objects.get_or_create(user=user, drawing=drawing)[0]
-    r.save()
-    return r
-
-def add_drawing(film, user, image, views, likes):
+def add_drawing(user, film, image, views = 0, likes = 0):
     d = Drawing.objects.get_or_create(film=film, image=image)[0]
     d.user = user
     d.views = views
@@ -45,10 +27,12 @@ def add_drawing(film, user, image, views, likes):
     d.save()
     return d
 
-def add_film(title):
-    f = Film.objects.get_or_create(title=title)[0]
-    f.save()
-    return f
+
+    # Print out what we have added to the user.
+    # for c in .objects.all():
+    #     for p in Page.objects.filter(category=c):
+    #         print "- {0} - {1}".format(str(c), str(p))
+
 
 # Start execution here!
 if __name__ == '__main__':
