@@ -6,7 +6,7 @@
 
 {% block body_block %}
 
-<h1>MOST RECENT - DECENT</h1>
+<h1>MOST RECENT</h1>
 
 {% if recent_drawings %}
     <ul class="nav nav-sidebar">
@@ -16,18 +16,24 @@
 
         <li>
           <strong class="like_count" id="{{d.id}}">{{ d.likes }}</strong> likes
-          <p>Drawing of film {{d.film}}</p>
+          {% if user.is_authenticated %}
+           <button id="like" data-catid="{{d.id}}" class="btn btn-primary" type="button">
+             <span class="glyphicon glyphicon-thumbs-up"></span>
+             Like</button>
+         {% endif %}
+         </br>
 
-        {% if d.user != None %}
-      <p>Drawing created by user {{d.user}}</p>
-      {% else %}
-      <p>Submitted by some anonymous guy</p>
-      {% endif %}
+          <p>{{d.film}}</p>
 
-        <button id="like" data-catid="{{d.id}}" class="btn btn-primary" type="button">
-          <span class="glyphicon glyphicon-thumbs-up"></span>
-          Like</button>
-		  </br>
+          <p>Created by
+            {% if d.user != None %}
+              {{d.user}}
+            {% else %}
+              anonymous
+            {% endif %}
+          </p>
+
+
 
       <!-- {% if user.is_authenticated %} -->
           <!-- <button class="likes" data-catid="{{d.id}}" class="btn btn-primary" type="button">

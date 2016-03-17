@@ -6,7 +6,7 @@
 
 {% block body_block %}
 
-<h1>HALL OF FAME GAME BLAME SHAME</h1>
+<h1>HALL OF FAME</h1>
 
 {% if recent_drawings %}
     <ul class="nav nav-sidebar">
@@ -15,22 +15,25 @@
         <img src="{{ d.image }}">
       </img>
   </br>
-      <button id="like" data-catid="{{d.id}}" class="btn btn-primary" type="button">
-        <span class="glyphicon glyphicon-thumbs-up"></span>
-        Like</button>
-        </br>
+    <li>
+        <strong class="like_count" id="{{d.id}}">{{ d.likes }}</strong> likes
 
+          {% if user.is_authenticated %}
+              <button id="like" data-catid="{{d.id}}" class="btn btn-primary" type="button">
+                <span class="glyphicon glyphicon-thumbs-up"></span>
+                Like</button>
+                </br>
+            {% endif %}
 
-        <li>
-          <strong class="like_count" id="{{d.id}}">{{ d.likes }}</strong> likes
+          <p>{{d.film}}</p>
 
-		<p>Drawing of film {{d.film}}</p>
-
-        {% if d.user != None %}
-      <p>Drawing created by user {{d.user}}</p>
-      {% else %}
-      <p>Submitted by some anonymous guy</p>
-      {% endif %}
+          <p>Created by
+            {% if d.user != None %}
+              {{d.user}}
+            {% else %}
+              anonymous
+            {% endif %}
+          </p>
 
       <!-- {% if user.is_authenticated %} -->
           <!-- <button class="likes" data-catid="{{d.id}}" class="btn btn-primary" type="button">

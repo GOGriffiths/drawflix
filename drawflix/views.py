@@ -39,15 +39,13 @@ def index(request):
 
     form = DrawingForm()
     context_dict['form'] = form
-    drawing_list = Drawing.objects.order_by('image')[:5]
-    context_dict['drawings'] = drawing_list
     response = render(request,'drawflix/index.html', context_dict)
 
     return response
 
 def about(request):
-    context_dict = {'boldmessage': "I am bold font from the context"}
-    return render(request, 'drawflix/about.html', context_dict)
+
+    return render(request, 'drawflix/about.html')
 
 def most_recent(request):
     recent_drawings = Drawing.objects.order_by('-date')[:15]

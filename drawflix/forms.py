@@ -30,22 +30,3 @@ class DrawingForm(forms.ModelForm):
         #fields = ('title', 'url', 'views')
 
         exclude = ('user', 'date')
-        # film = models.ForeignKey(Film)
-        # user = models.ForeignKey(User)
-        # image = models.URLField()
-        # views = models.IntegerField(default=0)
-        # likes = models.IntegerField(default=0)
-        # date = models.DateTimeField(default=datetime.datetime.now)
-
-#
-# class UserForm(forms.ModelForm):
-#     password = forms.CharField(widget=forms.PasswordInput())
-#
-#     class Meta:
-#         model = User
-#         fields = ('username', 'email', 'password')
-#
-# class UserProfileForm(forms.ModelForm):
-#     class Meta:
-#         model = UserProfile
-#         fields = ('website', 'picture')
