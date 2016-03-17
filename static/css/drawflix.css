@@ -1,0 +1,43 @@
+/*!
+ * Bootstrap v3.3.6 (http://getbootstrap.com)
+ * Copyright 2011-2015 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+{% load staticfiles %}
+html {
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+}
+
+#left-sidebar {
+    background-image: url("../images/curtains/left-curtain.png");
+    background-size: cover;
+}
+
+#right-sidebar {
+    background-image: url("../images/curtains/right-curtain.png");
+    background-size: cover;
+}
+
+.row {
+    background-color: grey;
+}
+
+.board {
+  /*margin: 0 auto;*/
+  width: 300px;
+  height: 300px;
+}
+
+#test_board {
+  width: 550px;
+  height: 300px;
+}
+
+
+/*# sourceMappingURL=bootstrap.css.map */
