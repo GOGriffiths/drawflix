@@ -9,40 +9,25 @@
 <!-- <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script> -->
 
 <!-- move this to a CSS file??  -->
-{#<style>#}
-{##}
-{#.board {#}
-{#  /*margin: 0 auto;*/#}
-{#  width: 300px;#}
-{#  height: 300px;#}
-{#}#}
-{##}
-{##test_board {#}
-{#  width: 550px;#}
-{#  height: 300px;#}
-{#}#}
-{##}
-{#</style>#}
 
       <div class="page-header">
     {% if user.is_authenticated %}
 
+      <h1>Hello {{ user.username }}!</h1>{% else %}
 
-      <h1>drawflix says... hello {{ user.username }}!</h1>{% else %}
-
-      <h1>drawflix says... hello world!</h1>
+      <h1>Welcome to Drawflix!</h1>
 
 
-      {% endif %}
+    {% endif %}
       </div>
 
     <div>
       <input type="text" id="film_search" maxlength="50" /> <input type="submit" id=
-      "submit_search" /><br />
+      "submit_search" value="Find Film"/> <br />
       <br />
       <select id="options" hidden="">
         </select>
-    </div><!-- temp solution -->
+    </div>
 
     <form id="drawing_form" method="post" action="/drawflix/add_drawing/" hidden="" name="drawing_form">
       {% csrf_token %}
@@ -55,30 +40,16 @@
       {{ field }}
       {% endfor %}
       <input type="submit" id="confirm_drawing" name="submit" value="Create drawing" />
-    </form><!--remvoe this lster!!!!!  -->
-    {% if drawings %}
+    </form>
 
-    <ul>
-      <li style="list-style: none">{% for drawing in drawings %}</li>
 
-      <li>{{drawing.film }}</li>
 
-      <li style="list-style: none">{% endfor %}</li>
-    </ul>{% else %} <strong>There are no drawings present.</strong> {% endif %}
-
-    <div>
-      <h1>DRAW SOME FLIX!</h1>
-    </div><button id="finalise">Confirm Drawing</button>
-
-    <div class="drawing_board" board="1">
+    <div class="drawing_board" board="1" >
       <div class="board" id="test_board"></div>
     </div>
 
+<br /><br /><button id="finalise">Submit</button></div>
 
-    <!-- <script src="{% static "js/jquery-2.2.1.js" %}"></script> -->
-    <!-- TODO move these to index template???  -->
-    <!-- <link rel="stylesheet" href="../../static/css/drawingboard.css">
-     <script src="{% static "js/drawingboard.js" %}"></script>
 
-    <script src="{% static "js/drawflix-ajax.js" %}"></script> -->
+
   {% endblock %}

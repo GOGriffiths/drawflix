@@ -1,16 +1,13 @@
 from django.shortcuts import render
-from drawflix.models import Drawing
-from drawflix.forms import DrawingForm
-# , UserForm, UserProfileForm
-# from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-
 from django.http import HttpResponseRedirect, HttpResponse
 from datetime import datetime, timedelta
 from django.utils import timezone
 
-# Create your views here.
+from drawflix.models import Drawing
+from drawflix.forms import DrawingForm
 
+#  Our Views
 
 def index(request):
     context_dict = {}
@@ -39,20 +36,20 @@ def index(request):
 
     form = DrawingForm()
     context_dict['form'] = form
-    drawing_list = Drawing.objects.order_by('image')[:5]
-    context_dict['drawings'] = drawing_list
     response = render(request,'drawflix/index.html', context_dict)
 
     return response
 
+
 def about(request):
-    context_dict = {'boldmessage': "I am bold font from the context"}
-    return render(request, 'drawflix/about.html', context_dict)
+    return render(request, 'drawflix/about.html')
+
 
 def most_recent(request):
     recent_drawings = Drawing.objects.order_by('-date')[:15]
     context_dict = {'recent_drawings': recent_drawings}
     return render(request, 'drawflix/most_recent.html', context_dict)
+
 
 def trending(request):
     end_date = datetime.now()
@@ -79,14 +76,14 @@ def add_drawing(request):
             if request.user.is_authenticated():
                 drawing.user = request.user
             drawing.save()
-
         else:
             # The supplied form contained errors - just print them to the terminal.
             print form.errors
     #TODO return drawing submitted message to user
     return index(request)
 
-@login_required
+
+@login_required # user must be logged in to like drawings
 def like_drawing(request):
 
     drawing_id = None
