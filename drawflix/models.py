@@ -13,5 +13,10 @@ class Drawing(models.Model):
     likes = models.IntegerField(default=0)
     date = models.DateTimeField(default=datetime.datetime.now)
 
+    def save(self, *args, **kwargs):
+        if self.likes < 0:
+            self.likes = 0
+        super(Drawing, self).save(*args, **kwargs)
+
     def __unicode__(self):
         return self.film + str(self.id)
