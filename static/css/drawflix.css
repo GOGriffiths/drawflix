@@ -61,4 +61,12 @@ body {
 }
 
 
+#logo {
+  font-family: 'Chelsea Market', cursive;
+}
+
+#general_font {
+  font-family: 'Ubuntu', sans-serif;
+}
+
 /*# sourceMappingURL=bootstrap.css.map */
