@@ -26,7 +26,7 @@ body {
 
 /* this one is the problem child, the bottom has an unexplicable white line*/
 .row {
-    /*background-color: #cccccc;*/
+    background-color: #cccccc;
 }
 
 .page-header {
