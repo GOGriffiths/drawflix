@@ -367,7 +367,7 @@ DrawingBoard.Board.defaultOpts = {
 	fillHack: true, //try to prevent issues with anti-aliasing with a little hack by default
 	webStorage: 'session',
 	droppable: false,
-	enlargeYourContainer: false,
+	enlargeYourContainer: true,
 	errorMessage: "<p>It seems you use an obsolete browser. <a href=\"http://browsehappy.com/\" target=\"_blank\">Update it</a> to start drawing.</p>",
 	stretchImg: false //when setting the canvas img, strech the image at the whole canvas size when this opt is true
 };
