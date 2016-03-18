@@ -24,19 +24,40 @@ body {
     background-size: cover;
 }
 
+/* this one is the problem child, the bottom has an unexplicable white line*/
 .row {
-    background-color: grey;
+    /*background-color: #cccccc;*/
+}
+
+.page-header {
+    color: black;
+    text-align: center;
+    background-image: url("../images/goldstar-web.png");
+    background-size: contain;
 }
 
 .board {
-  /*margin: 0 auto;*/
-  width: 300px;
-  height: 300px;
+    width: 500px;
+    height: 300px;
+}
+
+.drawing_board {
+    margin: 0 auto;
+    width: 600px;
+    height: 300px;
 }
 
 #test_board {
   width: 550px;
   height: 300px;
+}
+
+.movie-stuff {
+
+}
+
+#finalise {
+    float: right;
 }
 
 

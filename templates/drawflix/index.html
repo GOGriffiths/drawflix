@@ -10,24 +10,16 @@
 
 <!-- move this to a CSS file??  -->
 
-      <div class="page-header">
+    <div class="page-header">
     {% if user.is_authenticated %}
 
       <h1>Hello {{ user.username }}!</h1>{% else %}
 
-      <h1>Welcome to Drawflix!</h1>
+      <h1>Draw a Movie Poster</h1>
 
 
     {% endif %}
       </div>
-
-    <div>
-      <input type="text" id="film_search" maxlength="50" /> <input type="submit" id=
-      "submit_search" value="Find Film"/> <br />
-      <br />
-      <select id="options" hidden="">
-        </select>
-    </div>
 
     <form id="drawing_form" method="post" action="/drawflix/add_drawing/" hidden="" name="drawing_form">
       {% csrf_token %}
@@ -42,13 +34,18 @@
       <input type="submit" id="confirm_drawing" name="submit" value="Create drawing" />
     </form>
 
-
-
     <div class="drawing_board" board="1" >
-      <div class="board" id="test_board"></div>
-    </div>
+      <div class="board" id="test_board">
+      </div>
+        <br /><br />
 
-<br /><br /><button id="finalise">Submit</button></div>
+    <div class="movie-stuff">
+      <input type="text" id="film_search" maxlength="50" /> <input type="submit" id=
+      "submit_search" value="Find Film"/>
+      <select id="options" hidden=""></select>
+      <button id="finalise">Submit</button>
+    </div>
+    </div>
 
 
 

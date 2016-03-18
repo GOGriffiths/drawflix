@@ -60,10 +60,10 @@
 
     <div class="container-fluid">
       <div class="row">
-
-          <div class="col-sm-3 col-md-2 sidebar" id="left-sidebar">
+        <div class="col-sm-3 col-md-2 sidebar" id="left-sidebar">
         </div>
-
+      <div class="col-sm-3 col-md-offset-10 sidebar" id="right-sidebar">
+      </div>
 
         <div class="col-sm-9 col-sm-offset-3 col-md-8 col-md-offset-2 main">
 		   <div id="fade_in" hidden>
@@ -71,8 +71,6 @@
 			</div>
         </div>
 
-            <div class="col-sm-3 col-md-offset-10 sidebar" id="right-sidebar">
-           </div>
 
       </div>
     </div>
@@ -81,6 +79,8 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
 
+  </body>
+
     <script src="{% static "js/jquery-2.2.1.js" %}"></script>
     <!-- TODO move these to index template???  -->
     <!-- TODO: can't move to Index, images disappear; 'drawingboard.js' (and potentially other files too) seems to be coupled with image display on all pages (is it because of how the image file is stored?)-->
@@ -88,9 +88,5 @@
     <script src="{% static "js/drawingboard.js" %}"></script>
 
     <script src="{% static "js/drawflix-ajax.js" %}"></script>
-
-  </body>
-
-
 
 </html>
