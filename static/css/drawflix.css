@@ -14,6 +14,12 @@ body {
   margin: 0;
 }
 
+#navbar-all {
+    height: 60px !important;
+    /*background-image: url("../images/curtains/left-curtain.png");*/
+}
+
+
 #left-sidebar {
     background-image: url("../images/curtains/left-curtain.png");
     background-size: cover;
@@ -24,9 +30,15 @@ body {
     background-size: cover;
 }
 
-/* this one is the problem child, the bottom has an unexplicable white line*/
+/* this one is the problem child, the bottom has an unexplicable white line;
+container fluid to the length of the window */
 .row {
-    /*background-color: #cccccc;*/
+    background-color: royalblue;
+    height: 100vh;
+}
+
+.container-flu {
+    background-size: 25%;
 }
 
 .page-header {

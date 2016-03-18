@@ -27,7 +27,7 @@
   <body>
 
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container-fluid">
+      <div class="container-fluid" id="navbar-all">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="sr-only">Toggle navigation</span>
@@ -38,7 +38,7 @@
           <a class="navbar-brand" href="/drawflix/">Drawflix</a>
         </div>
         <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
+          <ul class="nav navbar-nav navbar-right" id="navbar-right">
                 <li><a href="{% url 'index' %}">Home</a></li>
                     <li><a href="{% url 'trending' %}">Trending</a></li>
                     <li><a href="{% url 'most_recent' %}">Most Recent</a></li>
@@ -65,7 +65,7 @@
       <div class="col-sm-3 col-md-offset-10 sidebar" id="right-sidebar">
       </div>
 
-        <div class="col-sm-9 col-sm-offset-3 col-md-8 col-md-offset-2 main">
+        <div class="col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 main">
 		   <div id="fade_in" hidden>
                 {% block body_block %}{% endblock %}
 			</div>
