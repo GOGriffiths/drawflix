@@ -37,10 +37,6 @@ container fluid to the length of the window */
     height: 100vh;
 }
 
-.container-flu {
-    background-size: 25%;
-}
-
 .page-header {
     color: black;
     text-align: center;
@@ -72,5 +68,13 @@ container fluid to the length of the window */
     float: right;
 }
 
+
+#logo {
+  font-family: 'Chelsea Market', cursive;
+}
+
+#general_font {
+  font-family: 'Ubuntu', sans-serif;
+}
 
 /*# sourceMappingURL=bootstrap.css.map */

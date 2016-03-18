@@ -19,7 +19,6 @@ class DrawingForm(forms.ModelForm):
         # Provide an association between the ModelForm and Drawing model
         model = Drawing
 
-    
         fields = ('image', 'film')
 
         exclude = ('user', 'date')
