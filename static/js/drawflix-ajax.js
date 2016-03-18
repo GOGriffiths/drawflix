@@ -4,7 +4,7 @@ $(document).ready( function() {
 
 	// for drawing page ---------
 
-	//when submit_search button clicked
+	//when find film button clicked
 	$('#submit_search').click(function(event){
 		var searchFilm =  $("#film_search").val(); //value to search for is value in searchFilm box
 		$.ajax({
