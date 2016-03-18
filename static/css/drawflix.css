@@ -30,18 +30,20 @@ body {
     background-size: cover;
 }
 
+.sidebar {
+    border-right: 0px !important;
+}
 /* this one is the problem child, the bottom has an unexplicable white line;
 container fluid to the length of the window */
 .row {
-    background-color: royalblue;
+    /*background-color: royalblue;*/
     height: 100vh;
+    /*height: 100% !important;*/
 }
 
 .page-header {
     color: black;
     text-align: center;
-    background-image: url("../images/goldstar-web.png");
-    background-size: contain;
 }
 
 .board {
@@ -56,8 +58,8 @@ container fluid to the length of the window */
 }
 
 #test_board {
-  width: 550px;
-  height: 300px;
+  width: 650px;
+  height: 400px;
 }
 
 .movie-stuff {
