@@ -2,7 +2,7 @@
 
 {% load staticfiles %}
 
-<html lang="en">
+<html class="full" lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,13 +10,20 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- TODO: the icon doesn't seem to do anything -->
-    <link rel="icon" href="http://getbootstrap.com/favicon.ico">
+    <!-- <link rel="icon" href="http://getbootstrap.com/favicon.ico"> -->
     <link href={% static "css/drawflix.css" %} rel="stylesheet">
 
     <title>Drawflix {% block title %}Home{% endblock %}</title>
 
-    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="http://getbootstrap.com/examples/dashboard/dashboard.css" rel="stylesheet">
+    <link href={% static "css/bootstrap.min.css" %} rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href={% static "css/full.css" %} rel="stylesheet">
+
+<!-- old template stuff -->
+    <!-- <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://getbootstrap.com/examples/dashboard/dashboard.css" rel="stylesheet"> -->
+
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Chelsea+Market">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Ubuntu:500">
 
@@ -60,12 +67,13 @@
       </div>
     </div>
 
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar" id="left-sidebar">
+<!-- dont need side bar code, or outer container fluid as covers over background image -->
+    <!-- <div class="container-fluid"> -->
+      <!-- <div class="row"> -->
+        <!-- <div class="col-sm-3 col-md-2 sidebar" id="left-sidebar">
         </div>
           <div class="col-sm-3 col-md-offset-10 sidebar" id="right-sidebar">
-          </div>
+          </div> -->
 
         <div class="col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 main">
 		   <div id="fade_in" hidden>
@@ -76,16 +84,22 @@
         </div>
 
 
-      </div>
-    </div>
+      <!-- </div> -->
+    <!-- </div> -->
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
+    <!-- jQuery -->
+    <script src={% static "js/jquery.js" %}></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src={% static "js/bootstrap.min.js" %}></script>
+
 
   </body>
 
-    <script src="{% static "js/jquery-2.2.1.js" %}"></script>
+    <!-- <script src="{% static "js/jquery-2.2.1.js" %}"></script> -->
     <!-- TODO move these to index template???  -->
     <!-- TODO: can't move to Index, images disappear; 'drawingboard.js' (and potentially other files too) seems to be coupled with image display on all pages (is it because of how the image file is stored?)-->
     <link rel="stylesheet" href="../../static/css/drawingboard.css">
