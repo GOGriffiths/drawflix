@@ -7,7 +7,6 @@ from django.utils import timezone
 from drawflix.models import Drawing
 from drawflix.forms import DrawingForm
 
-#  Our Views
 
 def index(request):
     context_dict = {}
@@ -65,7 +64,7 @@ def hall_of_fame(request):
 
 
 def add_drawing(request):
-    #temp solution for drawing(trext) in index.
+
     if request.method == 'POST':
         form = DrawingForm(request.POST)
 
@@ -79,7 +78,7 @@ def add_drawing(request):
         else:
             # The supplied form contained errors - just print them to the terminal.
             print form.errors
-    #TODO return drawing submitted message to user
+
     return index(request)
 
 

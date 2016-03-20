@@ -1,7 +1,12 @@
 import datetime
 from django.db import models
+
+# use Django's User model
 from django.contrib.auth.models import User
 # from django.template.defaultfilters import slugify  -- Dont need?
+
+
+
 
 class Drawing(models.Model):
 
@@ -13,6 +18,7 @@ class Drawing(models.Model):
     likes = models.IntegerField(default=0)
     date = models.DateTimeField(default=datetime.datetime.now)
 
+# overide save method for testing script
     def save(self, *args, **kwargs):
         if self.likes < 0:
             self.likes = 0

@@ -1,12 +1,10 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
-# At the top of your urls.py file, add the following line:
 from django.conf import settings
-
 from registration.backends.simple.views import RegistrationView
 
 
-# Create a new class that redirects the user to the index page, if successful at logging
+# Class that redirects the user to the index page, if successful at logging
 class MyRegistrationView(RegistrationView):
     def get_success_url(self,request):
         return '/drawflix/'
@@ -24,8 +22,6 @@ urlpatterns = patterns('',
 )
 
 
-
-# UNDERNEATH your urlpatterns definition, add the following two lines:
 if settings.DEBUG:
     urlpatterns += patterns(
         'django.views.static',
