@@ -1,8 +1,6 @@
 - disable DEBUG mode 
 - validate w3c website
 - username validation JQuery
-- set font to TINTIN
-- film view page?
 - remove either the drawflix-jquery or drawflix-ajax file from static/js (unsure which we'll end up using, ajax has current code)
 - add response if no/invalid film entered into film search box 
 - fix naive datetime issue
@@ -29,3 +27,4 @@
 WOULD LIKE TO HAVE:
 - add a page displaying all drawings for a movie
 - admin interface}
+- film view page

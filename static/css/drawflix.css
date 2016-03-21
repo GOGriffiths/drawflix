@@ -14,27 +14,15 @@ body {
   margin: 0;
 }
 
-#navbar-all {
+.navbar {
     height: 60px !important;
-    /*background-image: url("../images/curtains/left-curtain.png");*/
+    border: 0px !important;
+    background: transparent !important;
 }
 
-
-#left-sidebar {
-    background-image: url("../images/curtains/left-curtain.png");
-    background-size: cover;
+.nav-button {
+    background-color: blue;
 }
-
-#right-sidebar {
-    background-image: url("../images/curtains/right-curtain.png");
-    background-size: cover;
-}
-
-.sidebar {
-    border-right: 0px !important;
-}
-/* this one is the problem child, the bottom has an unexplicable white line;
-container fluid to the length of the window */
 .row {
     /*background-color: royalblue;*/
     height: 100vh;
@@ -53,11 +41,12 @@ container fluid to the length of the window */
 
 .drawing_board {
     margin: 0 auto;
-    width: 600px;
+    width: 700px;
     height: 300px;
 }
 
 #test_board {
+    margin: 0 auto;
   width: 650px;
   height: 400px;
 }
@@ -70,6 +59,13 @@ container fluid to the length of the window */
     float: right;
 }
 
+#film_search {
+    float: left;
+}
+#submit_search {
+    float: left;
+    margin-left: 1%;
+}
 
 #logo {
   font-family: 'Chelsea Market', cursive;

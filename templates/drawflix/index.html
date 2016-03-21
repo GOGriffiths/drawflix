@@ -7,14 +7,14 @@
 {% block body_block %}
 
     <div class="page-header">
-    {% if user.is_authenticated %}
+        {% if user.is_authenticated %}
 
-      <h1>Hello {{ user.username }}!</h1>{% else %}
+          <h1>Hello {{ user.username }}!</h1>{% else %}
 
-      <h1>Draw a Movie Poster</h1>
+          <h1>Draw a Movie Poster</h1>
 
-    {% endif %}
-      </div>
+        {% endif %}
+    </div>
 
     <form id="drawing_form" method="post" action="/drawflix/add_drawing/" hidden="" name="drawing_form">
       {% csrf_token %}
