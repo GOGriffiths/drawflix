@@ -9,4 +9,5 @@ urlpatterns = patterns('',
         url(r'^hall_of_fame/$', views.hall_of_fame, name='hall_of_fame'),
         url(r'^like_drawing/$', views.like_drawing, name='like_drawing'),
         url(r'^add_drawing/$', views.add_drawing, name='add_drawing'),
+        url(r'^archive/$', views.archive, name='archive'),
         )
