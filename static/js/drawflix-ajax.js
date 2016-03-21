@@ -17,6 +17,8 @@ $(document).ready( function() {
 		for (var i = 0; i < json_data.Search.length; i++) { //loop through JSON results and append to options
 		$('#options').append('<option value="' + json_data.Search[i].Title + '">' + json_data.Search[i].Title + '</option>');
 		}
+		//hide form error if currently displayed
+		$("#submit_error").hide();
 		//unhide the options box if hidden(default)
 		$("#options").show();
 		//clear the search box for next input
@@ -59,12 +61,19 @@ $("#options").on("change", function() {
 
 	$("#finalise").click(function() {
 
+		film = $("#id_film").val();
+
+		if(film != '') {
+
 		var canvas = myBoard.getImg();
 
 		$("#id_image").val(canvas);
 		$('#confirm_drawing').click()
 		$('.drawing-board-control-navigation-reset').click();
-
+}
+else {
+	$("#submit_error").fadeIn(500);
+}
 
 });
 
