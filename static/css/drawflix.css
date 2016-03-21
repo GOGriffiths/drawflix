@@ -18,7 +18,6 @@ body {
     height: 60px !important;
     border: 0px !important;
     background: transparent !important;
-
 }
 
 .nav-button {
@@ -30,11 +29,11 @@ body {
     /*height: 100% !important;*/
 }
 
-.page-header {
-    color: black;
-    text-align: center;
+/*.page-header {*/
+    /*color: black;*/
+    /*text-align: center;*/
 
-}
+/*}*/
 
 .board {
     width: 500px;
