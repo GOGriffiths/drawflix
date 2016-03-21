@@ -2,7 +2,7 @@
 
 $(document).ready( function() {
 
-	// for drawing page ---------
+
 
 	//when find film button clicked
 	$('#submit_search').click(function(event){
@@ -29,7 +29,7 @@ $(document).ready( function() {
 		});
 	});
 
-
+//adds selected film to hidden submission form
 $("#options").on("change", function() {
       $("#id_film").val($(this).val());
     });
@@ -47,6 +47,7 @@ $("#options").on("change", function() {
 
 	});
 
+//creates drawing board object
 	var myBoard = new DrawingBoard.Board('test_board',{
 	controls: [
 		'Color',
@@ -59,10 +60,11 @@ $("#options").on("change", function() {
 	enlargeYourContainer: true
 });
 
+//when user submits drawing
 	$("#finalise").click(function() {
 
 		film = $("#id_film").val();
-
+		//if film has been selected
 		if(film != '') {
 
 		var canvas = myBoard.getImg();
@@ -71,12 +73,13 @@ $("#options").on("change", function() {
 		$('#confirm_drawing').click()
 		$('.drawing-board-control-navigation-reset').click();
 }
-else {
+else { //if not, display error message
 	$("#submit_error").fadeIn(500);
 }
 
 });
 
+//fades in content
 $("#fade_in").fadeIn(1000);
 
 });
