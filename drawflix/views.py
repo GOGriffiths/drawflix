@@ -66,7 +66,7 @@ def hall_of_fame(request):
 
 def archive(request):
     drawing_list = Drawing.objects.all()
-    paginator = Paginator(drawing_list, 10) # Show 25 contacts per page
+    paginator = Paginator(drawing_list, 10) # Show 10 drawings per page
 
     page = request.GET.get('page')
     try:
