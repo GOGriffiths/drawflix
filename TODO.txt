@@ -1,65 +1,31 @@
-{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf460
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;\red33\green34\blue36;}
-\paperw16840\paperh11900\margl1440\margr1440\vieww12740\viewh10500\viewkind0
-\deftab720
-\pard\pardeftab720\partightenfactor0
+- disable DEBUG mode 
+- validate w3c website
+- username validation JQuery
+- set font to TINTIN
+- film view page?
+- remove either the drawflix-jquery or drawflix-ajax file from static/js (unsure which we'll end up using, ajax has current code)
+- add response if no/invalid film entered into film search box 
+- fix naive datetime issue
+- clear the sessions database as in tango chapter 11.8
+- seperate lists to show drawings by date and by time (chapter 14.2)
+- naive datetime warning
+- allow user to view profile - chapter16
+- remove side bar
+- set canvas size, move controls to bottom, change icons, layout(?)
+- reword save button to save to static folder
+- remove redundant script imports from index.html (although I couldn't do this and I don't know why, something related to the drawing board??)
+- find out why there's no input validation on user registration form
+- population script
+- and testing - at lest 2 tests?
+- link user to drawing
+- remove templatetags
+ 
+- move shift over the submit button
+- centre the trending etc.. images
+- increase drawflix canvas size
+- colour the text depending on background image
+- draw some silly images
 
-\f0\fs30 \cf2 \expnd0\expndtw0\kerning0
-- disable DEBUG mode{\field{\*\fldinst{HYPERLINK "https://drawflix.slack.com/archives/todo/p1456666777000002"}}{\fldrslt 
-\i\fs24 \cf0 \
-}}- validate w3c website\
-- username validation JQuery\
-- set font to TINTIN\
-{\field{\*\fldinst{HYPERLINK "https://drawflix.slack.com/archives/todo/p1456666817000004"}}{\fldrslt 
-\i\fs24 \cf0 \
-}}- film view page?{\field{\*\fldinst{HYPERLINK "https://drawflix.slack.com/archives/todo/p1456776041000002"}}{\fldrslt 
-\i\fs24 \cf0 \
-}}- remove either the drawflix-jquery or drawflix-ajax file from static/js (unsure which we'll end up using, ajax has current code){\field{\*\fldinst{HYPERLINK "https://drawflix.slack.com/archives/todo/p1456776122000003"}}{\fldrslt 
-\i\fs24 \cf0 \
-}}- add response if no/invalid film entered into film search box{\field{\*\fldinst{HYPERLINK "https://drawflix.slack.com/archives/todo/p1456782054000002"}}{\fldrslt 
-\i\fs24 \cf0 \
-}}- fix naive datetime issue{\field{\*\fldinst{HYPERLINK "https://drawflix.slack.com/archives/todo/p1457011708000002"}}{\fldrslt 
-\i\fs24 \cf0 \
-}}- clear the sessions database as in tango chapter 11.8{\field{\*\fldinst{HYPERLINK "https://drawflix.slack.com/archives/todo/p1457016678000003"}}{\fldrslt 
-\i\fs24 \cf0 \
-}}- seperate lists to show drawings by date and by time (chapter 14.2){\field{\*\fldinst{HYPERLINK "https://drawflix.slack.com/archives/todo/p1457017016000004"}}{\fldrslt 
-\i\fs24 \cf0 \
-}}- naive datetime warning{\field{\*\fldinst{HYPERLINK "https://drawflix.slack.com/archives/todo/p1457088873000002"}}{\fldrslt 
-\i\fs24 \cf0 \
-}}- allow user to view profile - chapter16{\field{\*\fldinst{HYPERLINK "https://drawflix.slack.com/archives/todo/p1457189387000002"}}{\fldrslt 
-\i\fs24 \cf0 \
-}}- remove side bar{\field{\*\fldinst{HYPERLINK "https://drawflix.slack.com/archives/todo/p1457189434000003"}}{\fldrslt 
-\i\fs24 \cf0 \
-}}- set canvas size, move controls to bottom, change icons, layout(?){\field{\*\fldinst{HYPERLINK "https://drawflix.slack.com/archives/todo/p1457189473000004"}}{\fldrslt 
-\i\fs24 \cf0 \
-}}- reword save button to save to static folder{\field{\*\fldinst{HYPERLINK "https://drawflix.slack.com/archives/todo/p1457207868000002"}}{\fldrslt 
-\i\fs24 \cf0 \
-}}- remove redundant script imports from index.html (although I couldn't do this and I don't know why, something related to the drawing board??){\field{\*\fldinst{HYPERLINK "https://drawflix.slack.com/archives/todo/p1457474363000002"}}{\fldrslt 
-\i\fs24 \cf0 \
-}}- find out why there's no input validation on user registration form{\field{\*\fldinst{HYPERLINK "https://drawflix.slack.com/archives/todo/p1457537436000002"}}{\fldrslt 
-\i\fs24 \cf0 \
-}}- population script{\field{\*\fldinst{HYPERLINK "https://drawflix.slack.com/archives/todo/p1457557093000002"}}{\fldrslt 
-\i\fs24 \cf0 \
-}}- and testing - at lest 2 tests?{\field{\*\fldinst{HYPERLINK "https://drawflix.slack.com/archives/todo/p1457561364000003"}}{\fldrslt 
-\i\fs24 \cf0 \
-}}- link user to drawing\
-- remove templatetags\
-\pard\pardeftab720\partightenfactor0
-\cf2 - centre the drawing canvas{\field{\*\fldinst{HYPERLINK "https://drawflix.slack.com/archives/todo/p1458489462000004"}}{\fldrslt 
-\i\fs24 \cf0 \
-}}- move shift over the submit button{\field{\*\fldinst{HYPERLINK "https://drawflix.slack.com/archives/todo/p1458489490000005"}}{\fldrslt 
-\i\fs24 \cf0 \
-}}- centre the trending etc.. images{\field{\*\fldinst{HYPERLINK "https://drawflix.slack.com/archives/todo/p1458489511000006"}}{\fldrslt 
-\i\fs24 \cf0 \
-}}- increase \'91drawflix\'92 size{\field{\*\fldinst{HYPERLINK "https://drawflix.slack.com/archives/todo/p1458489528000007"}}{\fldrslt 
-\i\fs24 \cf0 \
-}}- colour the text depending on background image{\field{\*\fldinst{HYPERLINK "https://drawflix.slack.com/archives/todo/p1458489567000008"}}{\fldrslt 
-\i\fs24 \cf0 \
-}}- draw some silly images{\field{\*\fldinst{HYPERLINK "https://drawflix.slack.com/archives/todo/p1458075334000002"}}{\fldrslt 
-\i\fs24 \cf0 \
-}}\pard\pardeftab720\partightenfactor0
-\cf2 \
-WOULD LIKE TO HAVE:\
-- add a page displaying all drawings for a movie\
+WOULD LIKE TO HAVE:
+- add a page displaying all drawings for a movie
 - admin interface}
