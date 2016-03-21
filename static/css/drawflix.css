@@ -22,7 +22,7 @@ body {
 }
 
 .nav-button {
-    background-color: blue;
+    /*background-color: blue;*/
 }
 .row {
     /*background-color: royalblue;*/
@@ -73,6 +73,7 @@ body {
   font-family: 'Chelsea Market', cursive;
   color: white;
   font-size: 48px;
+    margin-top: 3%;
 }
 
 #general_font {
