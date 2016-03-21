@@ -87,4 +87,10 @@ img {
     width: auto\9; /* ie8 */
 }
 
+
+
+.navbar-inverse .navbar-nav>li>a.highlights {
+  color: white;
+}
+
 /*# sourceMappingURL=bootstrap.css.map */
