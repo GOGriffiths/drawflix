@@ -71,6 +71,9 @@ body {
     margin-left: 1%;
 }
 
+#sidebar-test {
+    background-color: #1b6d85;
+}
 #logo {
   font-family: 'Chelsea Market', cursive;
   color: white;
