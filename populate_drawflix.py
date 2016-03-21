@@ -13,31 +13,36 @@ from django.contrib.auth.models import User
 
 def populate():
 
-    add_drawing(username="Luis Figo",
+    add_drawing(username="LuisFigo",
+                password="stralways",
                 film="Gillette",
                 image= gillette,
                 views = 29,
                 likes= 9)
 
     add_drawing(username="Bowie",
+                password="bowie",
                 film="labyrnth",
                 image= labyrnth,
                 views = 48,
                 likes= 70)
 
     add_drawing(username="gizmo",
+                password="gizmo",
                 film="gremlins",
                 image= gremlins,
                 views = 78,
                 likes= 76)
 
     add_drawing(username="chris",
+            password="chris",
             film="moon",
             image= moon,
             views = 20,
             likes= 12)
 
     add_drawing(username="nolan",
+            password="nolan",
             film="inception",
             image= inception,
             views = 48,
@@ -49,9 +54,9 @@ def populate():
 
 
 
-def add_drawing(username,film, image, views = 0, likes = 0):
+def add_drawing(username, password, film, image, views = 0, likes = 0):
     d = Drawing.objects.get_or_create(film=film, image=image)[0]
-    d.user = User.objects.create(username=username)
+    d.user = User.objects.create_user(username=username, password=password)
     d.views = views
     d.likes = likes
     d.save()
