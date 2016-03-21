@@ -12,6 +12,7 @@ html {
 }
 body {
   margin: 0;
+    font-family: 'Ubuntu', sans-serif !important;
 }
 
 .navbar {
@@ -23,9 +24,11 @@ body {
 .nav-button {
     /*background-color: blue;*/
 }
+
 .row {
     /*background-color: royalblue;*/
     height: 100vh;
+    margin: 0 auto;
     /*height: 100% !important;*/
 }
 
@@ -73,11 +76,6 @@ body {
   color: white;
   font-size: 48px;
     margin-top: 3%;
-}
-
-#general_font {
-  font-family: 'Ubuntu', sans-serif;
-
 }
 
 img {

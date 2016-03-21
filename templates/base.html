@@ -46,7 +46,7 @@
         </div>
         <div class="navbar-collapse collapse">
 
-          <ul class="nav navbar-nav navbar-right" id="general_font">
+          <ul class="nav navbar-nav navbar-right">
                 <li class="nav-button"><a href="{% url 'index' %}">Draw</a></li>
                 <li class="nav-button"><a href="{% url 'trending' %}">Trending</a></li>
                 <li class="nav-button"><a href="{% url 'most_recent' %}">Most Recent</a></li>
@@ -74,14 +74,11 @@
         </div>
           <div class="col-sm-3 col-md-offset-10 sidebar" id="right-sidebar">
           </div> -->
-
-        <div class="col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 main text-center">
-		   <div id="fade_in" hidden>
-             <div id="general_font">
-                    {% block body_block %}{% endblock %}
-             </div>
-			</div>
-        </div>
+         <div id="fade_in" hidden>
+            <div class="col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 main text-center">
+                {% block body_block %}{% endblock %}
+            </div>
+         </div>
 
 
       <!-- </div> -->
