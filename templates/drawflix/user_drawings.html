@@ -22,20 +22,6 @@
 
     {% endfor %}
 
-    <div class="pagination">
-        <span class="step-links">
-            {% if drawings.has_previous %}
-                <a href="?page={{ drawings.previous_page_number }}">previous</a>
-            {% endif %}
-
-            <span class="current">
-                Page {{ drawings.number }} of {{ drawings.paginator.num_pages }}.
-            </span>
-
-            {% if drawings.has_next %}
-                <a href="?page={{ drawings.next_page_number }}">next</a>
-            {% endif %}
-        </span>
 
 {% else %}
     <li> <strong >There are no drawings present.</strong></li>
