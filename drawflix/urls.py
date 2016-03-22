@@ -10,4 +10,5 @@ urlpatterns = patterns('',
         url(r'^like_drawing/$', views.like_drawing, name='like_drawing'),
         url(r'^add_drawing/$', views.add_drawing, name='add_drawing'),
         url(r'^archive/$', views.archive, name='archive'),
+        url(r'^user/$', views.user_drawings, name='user_drawings'),
         )
