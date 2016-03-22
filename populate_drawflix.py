@@ -13,23 +13,15 @@ from django.contrib.auth.models import User
 
 def populate():
 
-    add_drawing(username="LuisFigo",
-                password="stralways",
-                film="Gillette",
-                image= gillette,
-                likes= 9)
+
 
     add_drawing(username="Bowie",
                 password="bowie",
                 film="Labyrinth",
                 image= labyrnth,
-                likes= 70)
+                likes= 90)
 
-    add_drawing(username="gizmo",
-                password="gizmo",
-                film="Gremlins",
-                image= gremlins,
-                likes= 76)
+
 
     add_drawing(username="chris",
             password="chris",
@@ -49,43 +41,61 @@ def populate():
             image= bhc,
             likes= 150)
 
-    add_drawing(username="tom",
-            password="tom",
-            film="A Clockwork Orange",
-            image= orange,
-            likes= 92)
+
 
 
     add_drawing(username="brian15",
             password="brian",
             film="The Lord of the Rings: The Fellowship of the Ring",
             image= lotr,
-            likes= 121)
+            likes= 110)
 
 
     add_drawing(username="jim26",
             password="jim",
             film="Terminator 2: Judgment Day",
             image= terminator,
-            likes= 25)
+            likes= 100)
+
+
+    add_drawing(username="LuisFigo",
+            password="stralways",
+            film="Gillette",
+            image= gillette,
+            likes= 9)
 
     add_drawing(username="Chopsky",
             password="Chopsky",
             film="The Shining",
             image= shining,
-            likes= 9)
+            likes= 80)
+
 
     add_drawing(username="Ron",
             password="Ron",
             film="Rango",
             image= rango,
-            likes= 9)
+            likes= 120)
+
 
     add_drawing(username="Paulie",
             password="Paulie",
             film="Rocky IV",
             image= rockyiv,
             likes= 13)
+
+
+    add_drawing(username="gizmo",
+                password="gizmo",
+                film="Gremlins",
+                image= gremlins,
+                likes= 76)
+
+    add_drawing(username="tom",
+            password="tom",
+            film="A Clockwork Orange",
+            image= orange,
+            likes= 92)
 
 
 
