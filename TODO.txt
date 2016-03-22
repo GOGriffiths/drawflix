@@ -1,5 +1,0 @@
-- disable DEBUG mode 
-
-- validate w3c website
-
-
