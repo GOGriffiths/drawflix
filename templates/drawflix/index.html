@@ -15,7 +15,7 @@
           <h2>Draw a Movie Poster</h2>
     </div>
 
-    <form id="drawing_form" method="post" action="/drawflix/add_drawing/" hidden="" name="drawing_form">
+    <form id="drawing_form" method="post" action="{% url 'add_drawing' %}" hidden="" name="drawing_form">
       {% csrf_token %}
       {% for hidden in form.hidden_fields %}
       {{ hidden }}
