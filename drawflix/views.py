@@ -56,8 +56,8 @@ def trending(request):
     return render(request, 'drawflix/trending.html', context_dict)
 
 def hall_of_fame(request):
-    recent_drawings = Drawing.objects.order_by('-likes')[:15]
-    context_dict = {'recent_drawings': recent_drawings}
+    hall_of_fame = Drawing.objects.order_by('-likes')[:15]
+    context_dict = {'hall_of_fame': hall_of_fame}
     return render(request, 'drawflix/hall_of_fame.html', context_dict)
 
 def user_drawings(request):

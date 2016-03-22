@@ -6,10 +6,10 @@
 <br /><br />
 
 <div>
-  {% if recent_drawings %}
+  {% if hall_of_fame %}
       
 
-      {% for d in recent_drawings %}
+      {% for d in hall_of_fame %}
           <img src="{{ d.image }}" alt="no image"> <br />
           <strong class="like_count" id="{{d.id}}">{{ d.likes }}</strong> likes
           {% if user.is_authenticated %}
