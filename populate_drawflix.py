@@ -40,7 +40,7 @@ def populate():
 
     add_drawing(username="brian15",
             password="brian",
-            film="The Lord of the Rings: The Fellowship of the Ring",
+            film="The Lord of the Rings",
             image= lotr,
             likes= 110)
 
