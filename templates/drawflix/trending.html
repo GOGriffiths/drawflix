@@ -7,22 +7,19 @@
 
 <div>
   {% if trending_drawings %}
-      <ul class="nav nav-sidebar">
+      
 
       {% for d in trending_drawings %}
-          <img src="{{ d.image }}" alt="no image">
-          <li>
+          <img src="{{ d.image }}" alt="no image"> <br />
           <strong class="like_count" id="{{d.id}}">{{ d.likes }}</strong> likes
           {% if user.is_authenticated %}
               <button id="like" data-catid="{{d.id}}" class="btn btn-primary" type="button">
                 <span class="glyphicon glyphicon-thumbs-up"></span>
                 Like</button>
-      		  </br>
+      		  <br />
           {% endif %}
 
-          <p>{{d.film}}</p>
-
-  		<p>Created by
+          <p>{{d.film}} <br /> Created by
         {% if d.user != None %}
           {{d.user}}
         {% else %}
@@ -31,11 +28,11 @@
       </p>
 
       {% endfor %}
-
+		
   {% else %}
       <li> <strong >There are no drawings present.</strong></li>
 
-      </ul>
+      
   {% endif %}
 </div>
 
