@@ -7,7 +7,7 @@ from registration.backends.simple.views import RegistrationView
 # Class that redirects the user to the index page, if successful at logging
 class MyRegistrationView(RegistrationView):
     def get_success_url(self,request):
-        return '/drawflix/'
+        return 'index'
 
 
 urlpatterns = patterns('',
