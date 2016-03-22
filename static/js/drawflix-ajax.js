@@ -82,4 +82,13 @@ else { //if not, display error message
 //fades in content
 $("#fade_in").fadeIn(1000);
 
+//highlights current page on navbar
+$(function(){
+  $('a').each(function() {
+    if ($(this).prop('href') == window.location.href) {
+      $(this).addClass('highlights');
+    }
+  });
+});
+
 });

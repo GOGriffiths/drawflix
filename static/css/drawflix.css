@@ -107,4 +107,10 @@ img {
     border:3px solid #021a40;
 }
 
+
+
+.navbar-inverse .navbar-nav>li>a.highlights {
+  color: white;
+}
+
 /*# sourceMappingURL=bootstrap.css.map */
