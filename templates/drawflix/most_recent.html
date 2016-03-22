@@ -9,37 +9,32 @@
 <h1>MOST RECENT</h1>
 
 {% if recent_drawings %}
-    <ul class="nav nav-sidebar">
+            {% for d in recent_drawings %}
+                <div class="col-md-4">
+                    <img src="{{ d.image }}"></img>
+                    <strong class="like_count" id="{{d.id}}">{{ d.likes }}</strong> likes
+                    {% if user.is_authenticated %}
+                        <button id="like" data-catid="{{d.id}}" class="btn btn-primary" type="button">
+                        <span class="glyphicon glyphicon-thumbs-up"></span>
+                        Like</button>
+                    {% endif %}
+                    <p>{{d.film}}</p>
+                    <p>Created by
+                    {% if d.user != None %}
+                      {{d.user}}
+                    {% else %}
+                        anonymous
+                    {% endif %}
+                    </p>
+                </div>
+            {% endfor %}
 
-    {% for d in recent_drawings %}
-        <img src="{{ d.image }}"></img>
-
-        <li>
-          <strong class="like_count" id="{{d.id}}">{{ d.likes }}</strong> likes
-          {% if user.is_authenticated %}
-           <button id="like" data-catid="{{d.id}}" class="btn btn-primary" type="button">
-             <span class="glyphicon glyphicon-thumbs-up"></span>
-             Like</button>
-         {% endif %}
-         </br>
-
-          <p>{{d.film}}</p>
-
-          <p>Created by
-            {% if d.user != None %}
-              {{d.user}}
-            {% else %}
-              anonymous
-            {% endif %}
-          </p>
-
-
-    {% endfor %}
-
+            <div class="col-md-4">
+            </div>
+        </div>
 {% else %}
     <li> <strong >There are no drawings present.</strong></li>
 
-    </ul>
 {% endif %}
 
 
