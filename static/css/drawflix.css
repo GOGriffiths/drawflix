@@ -70,6 +70,9 @@ body {
     height: 300px;
 }
 
+.form-signin {
+    margin: 25px;
+}
 #test_board {
     margin: 0 auto;
   width: 650px;
