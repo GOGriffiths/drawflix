@@ -50,7 +50,7 @@
                 <li class="nav-button"><a href="{% url 'archive' %}">Archive</a></li>
 
                     {% if user.is_authenticated %}
-                      <li class="nav-button"><a href="{% url 'user_drawings' %}">Your Drawings</a></li>
+                      <li class="nav-button"><a href="{% url 'user_drawings' %}">MyFlix</a></li>
                       <li class="nav-button"><a href="{% url 'auth_logout' %}?next={% url 'index' %}">Logout</a></li>
                     {% else %}
                       <li class="nav-button"><a href="{% url 'auth_login' %}">Login</a></li>
