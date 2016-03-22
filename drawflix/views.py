@@ -97,10 +97,10 @@ def add_drawing(request):
                 drawing.user = request.user
             drawing.save()
         else:
-            # The supplied form contained errors - just print them to the terminal.
+            # The supplied form contained errors
             print form.errors
 
-    return index(request)
+    return most_recent(request)
 
 
 @login_required # user must be logged in to like drawings
