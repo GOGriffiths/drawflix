@@ -9,7 +9,7 @@
 
 
 .full {
-    background: url("../images/background_pixelated.jpg") no-repeat center center fixed;
+    background: url("../images/Strokes-Paint-Wallpaper-Downloads.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -40,7 +40,7 @@ body {
     height: 60px !important;
     border: 0px !important;
     /*background: transparent !important;*/
-    background-image: url("../images/background_navbar.jpeg");
+    background-image: url("../images/Strokes-Paint-Wallpaper-Downloads.jpg");
     background-size: cover;
     opacity: 0.4;
 }
