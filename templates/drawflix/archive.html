@@ -11,7 +11,7 @@
 {% if drawings %}
     {% for d in drawings %}
         <div class="col-md-4">
-            <img src="{{ d.image }}"></img>
+            <img src="{{ d.image }}" alt="no image">
             <strong class="like_count" id="{{d.id}}">{{ d.likes }}</strong> likes
             {% if user.is_authenticated %}
                 <button id="like" data-catid="{{d.id}}" class="btn btn-primary" type="button">
