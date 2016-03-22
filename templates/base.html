@@ -60,9 +60,10 @@
                       <li class="nav-button"><a href="{% url 'auth_logout' %}?next=/drawflix/">Logout</a></li>
                     {% else %}
                       <li class="nav-button"><a href="{% url 'auth_login' %}">Login</a></li>
+                      <li class="nav-button"><a href="{% url 'registration_register' %}">Register</a></li>
                     {% endif %}
 
-                    <li class="nav-button"><a href="{% url 'registration_register' %}">Register</a></li>
+
                     <li class="nav-button"><a href="{% url 'about' %}">About</a></li>
               </ul>
 

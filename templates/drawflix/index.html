@@ -9,11 +9,10 @@
     <div class="page-header">
         {% if user.is_authenticated %}
 
-          <h1>Hello {{ user.username }}!</h1>{% else %}
-
-          <h1>Draw a Movie Poster</h1>
+          <h1>Hello {{ user.username }}!</h1>
 
         {% endif %}
+          <h2>Draw a Movie Poster</h2>
     </div>
 
     <form id="drawing_form" method="post" action="/drawflix/add_drawing/" hidden="" name="drawing_form">

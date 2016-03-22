@@ -71,7 +71,7 @@ def user_drawings(request):
 
 def archive(request):
     drawing_list = Drawing.objects.all()
-    paginator = Paginator(drawing_list, 10) # Show 10 drawings per page
+    paginator = Paginator(drawing_list, 12) # Show 10 drawings per page
 
     page = request.GET.get('page')
     try:
