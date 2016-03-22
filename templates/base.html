@@ -9,8 +9,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <!-- TODO: the icon doesn't seem to do anything -->
-    <!-- <link rel="icon" href="http://getbootstrap.com/favicon.ico"> -->
 
     <!-- Use Bootstrap CDN to add Font Awesome for twitter favicon etc. -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -21,10 +19,6 @@
 
     <!-- Custom CSS -->
      <link href={% static "css/drawflix.css" %} rel="stylesheet">
-
-<!-- old template stuff -->
-    <!-- <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="http://getbootstrap.com/examples/dashboard/dashboard.css" rel="stylesheet"> -->
 
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Chelsea+Market">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Ubuntu:500">
@@ -74,6 +68,7 @@
          <div id="fade_in" hidden>
             <div class="container-fluid text-center">
                 <div class="row">
+                  <br /><br />
                     {% block body_block %}
                     {% endblock %}
                 </div>
@@ -93,9 +88,6 @@
 
   </body>
 
-    <!-- <script src="{% static "js/jquery-2.2.1.js" %}"></script> -->
-    <!-- TODO move these to index template???  -->
-    <!-- TODO: can't move to Index, images disappear; 'drawingboard.js' (and potentially other files too) seems to be coupled with image display on all pages (is it because of how the image file is stored?)-->
     <link rel="stylesheet" href="../../static/css/drawingboard.css">
     <script src="{% static "js/drawingboard.js" %}"></script>
 

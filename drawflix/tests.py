@@ -1,6 +1,5 @@
 from django.test import TestCase
 from django.core.urlresolvers import reverse
-
 from drawflix.models import Drawing
 from drawflix.forms import DrawingForm
 

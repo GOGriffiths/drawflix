@@ -2,13 +2,9 @@ from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect, HttpResponse
 from datetime import datetime, timedelta
-from django.utils import timezone
-
 from drawflix.models import Drawing
 from drawflix.forms import DrawingForm
-
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-
 
 def index(request):
     context_dict = {}
@@ -83,7 +79,9 @@ def archive(request):
         # If page is out of range (e.g. 9999), deliver last page of results.
         contacts = paginator.page(paginator.num_pages)
 
-    return render(request, 'drawflix/archive.html', {'drawings': drawings})
+    context_dict = {'drawings': drawings}
+
+    return render(request, 'drawflix/archive.html', context_dict)
 
 
 def add_drawing(request):

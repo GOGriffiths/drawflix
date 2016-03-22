@@ -13,100 +13,97 @@ from django.contrib.auth.models import User
 
 def populate():
 
-    add_drawing(username="LuisFigo",
-                password="stralways",
-                film="Gillette",
-                image= gillette,
-                views = 29,
-                likes= 9)
+
 
     add_drawing(username="Bowie",
                 password="bowie",
-                film="labyrnth",
+                film="Labyrinth",
                 image= labyrnth,
-                views = 48,
-                likes= 70)
+                likes= 90)
 
-    add_drawing(username="gizmo",
-                password="gizmo",
-                film="gremlins",
-                image= gremlins,
-                views = 78,
-                likes= 76)
+
 
     add_drawing(username="chris",
             password="chris",
-            film="moon",
+            film="Moon",
             image= moon,
-            views = 20,
             likes= 12)
 
     add_drawing(username="nolan",
             password="nolan",
-            film="inception",
+            film="Inception",
             image= inception,
-            views = 48,
             likes= 70)
 
     add_drawing(username="bob",
             password="bob",
             film="Beverly Hills Cop",
             image= bhc,
-            views = 100,
             likes= 150)
 
-    add_drawing(username="tom",
-            password="tom",
-            film="A clockwork Orange",
-            image= orange,
-            views = 80,
-            likes= 92)
-	
-	
+
+
+
     add_drawing(username="brian15",
             password="brian",
             film="The Lord of the Rings: The Fellowship of the Ring",
             image= lotr,
-            views = 1000,
-            likes= 121)
+            likes= 110)
 
-			
+
     add_drawing(username="jim26",
             password="jim",
             film="Terminator 2: Judgment Day",
             image= terminator,
-            views = 10,
-            likes= 25)
+            likes= 100)
+
+
+    add_drawing(username="LuisFigo",
+            password="stralways",
+            film="Gillette",
+            image= gillette,
+            likes= 9)
 
     add_drawing(username="Chopsky",
             password="Chopsky",
             film="The Shining",
             image= shining,
-            views = 13,
-            likes= 9)
+            likes= 80)
+
 
     add_drawing(username="Ron",
             password="Ron",
             film="Rango",
             image= rango,
-            views = 67,
-            likes= 9)
+            likes= 120)
+
 
     add_drawing(username="Paulie",
             password="Paulie",
             film="Rocky IV",
             image= rockyiv,
-            views = 13,
             likes= 13)
 
 
+    add_drawing(username="gizmo",
+                password="gizmo",
+                film="Gremlins",
+                image= gremlins,
+                likes= 76)
+
+    add_drawing(username="tom",
+            password="tom",
+            film="A Clockwork Orange",
+            image= orange,
+            likes= 92)
 
 
 
-def add_drawing(username, password, film, image, views = 0, likes = 0):
+
+
+def add_drawing(username, password, film, image, likes = 0):
     d = Drawing.objects.get_or_create(film=film, image=image)[0]
     d.user = User.objects.create_user(username=username, password=password)
-    d.views = views
     d.likes = likes
     d.save()
     return d

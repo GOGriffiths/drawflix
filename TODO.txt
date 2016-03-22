@@ -1,32 +1,5 @@
 - disable DEBUG mode 
+
 - validate w3c website
-- username validation JQuery
-- remove either the drawflix-jquery or drawflix-ajax file from static/js (unsure which we'll end up using, ajax has current code)
-- fix naive datetime issue
-- clear the sessions database as in tango chapter 11.8
-- separate lists to show drawings by date and by time (chapter 14.2)
-- naive datetime warning
 
-- set canvas size, move controls to bottom, change icons, layout(?)
-- reword save button to save to static folder
-- remove redundant script imports from index.html (although I couldn't do this and I don't know why, something related to the drawing board??)
-- find out why there's no input validation on user registration form
-- and testing - at lest 2 tests?
-- link user to drawing
 
-- increase drawflix canvas size
-- colour the text depending on background image
-- draw some silly images
-- add grid view to Archive
-
-- 
-
-CANVAS:
-- check automatic re-sizing
-- might have unnecessary <divs>
-
-WOULD LIKE TO HAVE:
-- admin interface
-- film view page
-- sidebar search + page for all drawings for any movie
-- allow user to view profile - chapter16
