@@ -90,7 +90,6 @@ img {
     max-width: 100%;
     height: auto;
     width: auto\9; /* ie8 */
-    padding:2px;
     border:3px solid #021a40;
 }
 .navbar {
