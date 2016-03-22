@@ -19,9 +19,7 @@
 - draw some silly images
 - add grid view to Archive
 
-[ next two -- consider together ]
-- consistency with titles (also think about styling; at the moment don't fit with the rest)
-- don't need section titles, navbar highlights the current position (thanks, Dave) !
+- 
 
 CANVAS:
 - check automatic re-sizing
