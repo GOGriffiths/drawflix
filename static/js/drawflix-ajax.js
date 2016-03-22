@@ -40,7 +40,7 @@ $("#options").on("change", function() {
 	$(document).on("click","#like", function(){
 		var catid;
 		catid = $(this).attr("data-catid");
-		$.get('/drawflix/like_drawing/', {drawing_id: catid}, function(data){
+		$.get('/like_drawing/', {drawing_id: catid}, function(data){
 			$('#' + catid).html(data);
 
     });
