@@ -18,8 +18,8 @@
                 <span class="glyphicon glyphicon-thumbs-up"></span>
                 Like</button>
             {% endif %}
-            <p>{{d.film}}</p>
-            <p>Created by
+            <p>{{d.film}} <br />
+            Created by
             {% if d.user != None %}
               {{d.user}}
             {% else %}
@@ -29,8 +29,8 @@
         </div>
     {% endfor %}
 
-    </br>
-    </br>
+    <br />
+    <br />
     <div class="pagination col-md-12">
         <span class="step-links">
             {% if drawings.has_previous %}
