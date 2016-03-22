@@ -64,6 +64,11 @@ def hall_of_fame(request):
     context_dict = {'recent_drawings': recent_drawings}
     return render(request, 'drawflix/hall_of_fame.html', context_dict)
 
+def user_drawings(request):
+    user_drawings = Drawing.objects.filter(user=request.user)
+    context_dict = {'user_drawings': user_drawings}
+    return render(request, 'drawflix/user_drawings.html', context_dict)
+
 def archive(request):
     drawing_list = Drawing.objects.all()
     paginator = Paginator(drawing_list, 10) # Show 10 drawings per page

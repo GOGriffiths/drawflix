@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block title %} - Hall of Fame{% endblock %}
+
+{% block body_block %}
+
+<h1>YOUR DRAWINGS</h1>
+
+{% if user_drawings %}
+    <ul class="nav nav-sidebar">
+
+    {% for d in user_drawings %}
+        <img src="{{ d.image }}">
+      </img>
+  </br>
+    <li>
+        <strong class="like_count" id="{{d.id}}">{{ d.likes }}</strong> likes
+
+          <p>{{d.film}}</p>
+
+    {% endfor %}
+
+    <div class="pagination">
+        <span class="step-links">
+            {% if drawings.has_previous %}
+                <a href="?page={{ drawings.previous_page_number }}">previous</a>
+            {% endif %}
+
+            <span class="current">
+                Page {{ drawings.number }} of {{ drawings.paginator.num_pages }}.
+            </span>
+
+            {% if drawings.has_next %}
+                <a href="?page={{ drawings.next_page_number }}">next</a>
+            {% endif %}
+        </span>
+
+{% else %}
+    <li> <strong >There are no drawings present.</strong></li>
+
+    </ul>
+{% endif %}
+
+
+{% endblock %}
