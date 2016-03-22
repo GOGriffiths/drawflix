@@ -16,9 +16,6 @@
     -o-background-size: cover;
 }
 .container-fluid {
-    /*background-image: url("../images/background_pixelated.jpg");*/
-    /*background: transparent !important;*/
-    /*opacity: 70;*/
     height: 100%;
 }
 
@@ -31,15 +28,13 @@ html {
 body {
   margin: 3%;
     font-family: 'Ubuntu', sans-serif !important;
-    /*background: url("../images/background_pixelated.jpg") no-repeat center center fixed;*/
-    /*background: url("https://wallpaperscraft.com/image/background_flashing_blurry_bright_colorful_35087_2560x1440.jpg") no-repeat center center fixed;*/
     background: transparent;
 }
+
 
 .navbar {
     height: 60px !important;
     border: 0px !important;
-    /*background: transparent !important;*/
 
     background-size: cover;
     opacity: 0.6;
@@ -47,17 +42,10 @@ body {
 
 
 .row {
-    /*background-color: royalblue;*/
     height: 100vh;
     margin: 0 auto;
-    /*height: 100% !important;*/
 }
 
-/*.page-header {*/
-    /*color: black;*/
-    /*text-align: center;*/
-
-/*}*/
 
 .board {
     width: 500px;
