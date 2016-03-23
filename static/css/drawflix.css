@@ -82,8 +82,7 @@ body {
 #logo {
   font-family: 'Chelsea Market', cursive;
   color: white;
-  font-size: 48px;
-    margin-top: 3%;
+  font-size: 5vh;
 }
 
 img {
@@ -103,5 +102,23 @@ img {
 #options {
   width: 250px;
 }
+
+.navbar-collapse.collapsing {
+	border-top: transparent;
+	background-color: #A94260;
+	width: 30vw; 
+}
+
+.navbar-collapse.collapse.in {
+	border-top: transparent;
+	background-color: #A94260;
+	width: 30vw; 
+}
+
+.navbar-brand {
+    float: left;
+    height: 6.9vh;
+}
+
 
 /*# sourceMappingURL=bootstrap.css.map */
