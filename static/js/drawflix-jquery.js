@@ -16,7 +16,8 @@ $("#options").on("change", function() {
 
     });
 	
-	$(this).hide();
+
+	$(this).attr("disabled", true);;
 
 	});
 
