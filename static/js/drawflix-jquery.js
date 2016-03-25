@@ -15,6 +15,8 @@ $("#options").on("change", function() {
 			$('#' + catid).html(data);
 
     });
+	
+	$(this).hide();
 
 	});
 
